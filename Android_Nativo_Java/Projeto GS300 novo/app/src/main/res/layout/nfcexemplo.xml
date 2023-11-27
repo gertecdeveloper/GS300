@@ -43,7 +43,7 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_gravar"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
@@ -61,7 +61,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_leitura" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_leitura"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
@@ -78,7 +78,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_formatarCartao"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
@@ -96,7 +96,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_gravar" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_teste"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"

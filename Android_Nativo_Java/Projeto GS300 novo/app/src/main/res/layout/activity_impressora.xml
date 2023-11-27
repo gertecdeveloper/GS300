@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="@id/btCupom"
         app:layout_constraintStart_toStartOf="@id/btImage" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btImage"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:background="@drawable/shadow"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btCupom"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:background="@drawable/shadow"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btImprimirQRCode"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
         app:layout_constraintTop_toTopOf="@id/btImage"
         app:layout_constraintVertical_bias="0.250" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btImprimirCodeBar"
         android:layout_width="160dp"
         android:layout_height="wrap_content"

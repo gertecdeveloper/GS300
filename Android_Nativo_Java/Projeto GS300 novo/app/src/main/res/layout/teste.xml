@@ -33,7 +33,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView24"></EditText>
 
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonConsultar"
         android:layout_width="282dp"
         android:layout_height="50dp"
@@ -49,7 +49,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonStatus"
         android:layout_width="282dp"
         android:layout_height="50dp"
@@ -64,7 +64,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonFimaFim"
         android:layout_width="282dp"
         android:layout_height="50dp"
@@ -78,7 +78,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonTesteVenda"
         android:layout_width="282dp"
         android:layout_height="50dp"
@@ -91,7 +91,7 @@
         app:layout_constraintBottom_toTopOf="@+id/buttonCancelamento"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonCancelamento"
         android:layout_width="282dp"
         android:layout_height="50dp"
@@ -104,7 +104,7 @@
         app:layout_constraintBottom_toTopOf="@+id/buttonConsultarSessao"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonConsultarSessao"
         android:layout_width="282dp"
         android:layout_height="50dp"

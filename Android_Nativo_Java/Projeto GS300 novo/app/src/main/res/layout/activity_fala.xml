@@ -35,7 +35,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnFrase1"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
@@ -47,7 +47,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:background="@drawable/shadow"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnFrase2"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnFrase1"
         android:background="@drawable/shadow"/>/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnFrase3"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnFrase2"
         android:background="@drawable/shadow"/>/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnFrase4"
         android:layout_width="250dp"
         android:layout_height="wrap_content"

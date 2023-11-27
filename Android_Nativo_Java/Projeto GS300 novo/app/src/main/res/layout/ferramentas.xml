@@ -30,7 +30,7 @@
             android:inputType="text"></EditText>
     </TableRow>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonDesbloquear"
         android:layout_width="282dp"
         android:layout_height="50dp"
@@ -43,7 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="18dp" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonBloquear"
         android:layout_width="282dp"
         android:layout_height="50dp"
@@ -56,7 +56,7 @@
         android:layout_width="match_parent"
         android:layout_height="18dp" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonLog"
         android:layout_width="282dp"
         android:layout_height="50dp"
@@ -69,7 +69,7 @@
         android:layout_width="match_parent"
         android:layout_height="18dp" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonAtualizar"
         android:layout_width="282dp"
         android:layout_height="50dp"
@@ -82,7 +82,7 @@
         android:layout_width="match_parent"
         android:layout_height="18dp" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonVersao"
         android:layout_width="282dp"
         android:layout_height="50dp"

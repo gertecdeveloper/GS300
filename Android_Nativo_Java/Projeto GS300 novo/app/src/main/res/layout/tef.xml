@@ -230,7 +230,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnEnviarTransacao"
         android:layout_width="383dp"
         android:layout_height="44dp"
@@ -242,7 +242,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:background="@drawable/shadow"/>/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnCancelarTransacao"
         android:layout_width="383dp"
         android:layout_height="0dp"
@@ -254,7 +254,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnEnviarTransacao"
         android:background="@drawable/shadow"/>/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnFuncoes"
         android:layout_width="383dp"
         android:layout_height="40dp"
@@ -266,7 +266,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnCancelarTransacao"
         android:background="@drawable/shadow"/>/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnReimpressao"
         android:layout_width="383dp"
         android:layout_height="43dp"
