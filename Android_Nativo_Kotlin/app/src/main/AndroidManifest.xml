@@ -1,0 +1,57 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.gs300_2023">
+        <uses-permission android:name="android.permission.NFC" />
+    <application
+        android:allowBackup="true"
+        android:exported="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        tools:node="replace"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.GS300_2023"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        tools:replace="android:theme"
+        android:supportsRtl="true">
+
+
+        <activity android:name=".msitef.Tef"
+            android:exported="false"
+            />
+        <activity android:name=".sat.Ferramentas"
+            android:exported="false" />
+        <activity android:name=".sat.Teste"
+            android:exported="false"   />
+        <activity android:name=".sat.Rede"
+            android:exported="false" />
+        <activity android:name=".sat.Associar"
+            android:exported="false"  />
+        <activity android:name=".sat.Alterar"
+            android:exported="false"  />
+        <activity android:name=".sat.Ativacao"
+            android:exported="false" />
+        <activity android:name=".sat.MenuSat"
+            android:exported="false"   />
+        <activity android:name=".impressora.ImpressoraActivity"
+            android:exported="false"  />
+        <activity android:name=".sublcd.SubLcd"
+            android:exported="false"  />
+        <activity android:name=".fala.FalaActivity"
+            android:exported="false"  />
+        <activity android:name=".nfc.NfcExemplo"
+            android:exported="false"/>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value=""/>
+        </activity>
+
+    </application>
+</manifest>
