@@ -1,0 +1,182 @@
+unit NFC;
+
+interface
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
+  FMX.Edit, FMX.Controls.Presentation,
+  System.Diagnostics,
+  System.TimeSpan,
+  //
+  NFCHelper, FMX.Objects, FMX.Layouts, FMX.ScrollBox, FMX.Memo, FMX.Memo.Types;
+type
+  TfrmNFC = class(TForm)
+    Label1: TLabel;
+    edtMensagem: TEdit;
+    btnGravar: TButton;
+    btnLer: TButton;
+    btnFormatar: TButton;
+    btnLeituraGravacao: TButton;
+    painel: TLayout;
+    Image1: TImage;
+    lbPainelTitle: TLabel;
+    lbResposta: TLabel;
+    meResposta: TMemo;
+    procedure FormCreate(Sender: TObject);
+    procedure btnGravarClick(Sender: TObject);
+    procedure btnLerClick(Sender: TObject);
+    procedure btnFormatarClick(Sender: TObject);
+    procedure btnLeituraGravacaoClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+  private
+    { Private declarations }
+    procedure MostrarPainel(titulo: string);
+    procedure MostrarTempoExecucao();
+  public
+    { Public declarations }
+  end;
+var
+  frmNFC: TfrmNFC;
+  NFCAdapter : TNFCHelper;
+  Stopwatch: TStopwatch;
+  Elapsed: TTimeSpan;
+  Seconds: Double;
+  Resultado: string;
+implementation
+{$R *.fmx}
+
+{--------------------------------------------------------------------------
+    Botão: btnFormatar
+    Resposável por fomatar o cartão NFC
+--------------------------------------------------------------------------}
+procedure TfrmNFC.btnFormatarClick(Sender: TObject);
+begin
+    //Altera o título apresentado na tela
+    MostrarPainel('Formatar Cartão');
+    //Chama a função para formatar o cartão e fica aguardando a aproximação
+    NFCAdapter.FormatarNFC(
+        procedure(status: NFC_RESPONSE; return : string)
+          begin
+             ShowMessage(return);
+             MostrarTempoExecucao;
+          end
+    );
+end;
+
+{--------------------------------------------------------------------------
+    Botão: btnGravar
+    Resposável por Gravar o cartão NFC
+    * É necessário preencher o campo edit com a mensagem a ser garvada no
+    * cartão antes de pressionar o botão, caso o campo esteja em branco
+    * é gravado a palavra "Gertec"
+--------------------------------------------------------------------------}
+procedure TfrmNFC.btnGravarClick(Sender: TObject);
+var
+msg : string;
+begin
+      //Coloca o cursor no campo edtMensagem
+     edtMensagem.SetFocus;
+     //Se o campo estiver vazio no momento que o botão foi pressionado será gravado
+     // "Gertec" no cartão
+     if edtMensagem.Text = '' then msg := 'Gertec' else msg := edtMensagem.Text;
+     // Altera o título apresentado na tela
+     MostrarPainel('Gravar Cartão');
+
+     //Chama a função para gravar o cartão e fica aguardando a aproximação
+     NFCAdapter.GravarMesagem(msg,
+        procedure(status: NFC_RESPONSE; return : string)
+          begin
+             ShowMessage(return);
+             MostrarTempoExecucao;
+          end
+    );
+end;
+
+
+{--------------------------------------------------------------------------
+    Botão: btnLeituraGravação
+    Resposável por gravar o cartão NFC e na sequencia, ler o que foi gravado
+  --------------------------------------------------------------------------}
+procedure TfrmNFC.btnLeituraGravacaoClick(Sender: TObject);
+begin
+    // Altera o título apresentado na tela
+    MostrarPainel('Gravar/Ler Cartão');
+    //Chama a função para gravar o cartão e fica aguardando a aproximação
+    // a função irá gravar "GERTEC1000" no cartão, na sequencia irá ler e mostrar
+    // no campo meResposta o que foi lido
+    NFCAdapter.TesteLeituraGravacao(
+          procedure(status: NFC_RESPONSE; return : string; MensagemCartao: string)
+          begin
+             ShowMessage(return);
+             meResposta.Text := MensagemCartao;
+          end);
+end;
+
+{--------------------------------------------------------------------------
+    Botão: btnLer
+    Resposável por ler o cartão NFC
+  --------------------------------------------------------------------------}
+procedure TfrmNFC.btnLerClick(Sender: TObject);
+begin
+   // Altera o título apresentado na tela
+   MostrarPainel('Leitura do Cartão NFC');
+   //Chama a função para ler o cartão e fica aguardando a aproximação
+   // a função irá ler o que está gravado no cartão, mostrar no campo lbResposta
+   NFCAdapter.LerCartao(
+        procedure(status: NFC_RESPONSE; return : string; MensagemCartao: string)
+          begin
+             ShowMessage(return);
+             lbResposta.Text := MensagemCartao;
+             MostrarTempoExecucao;
+          end
+    );
+end;
+
+{--------------------------------------------------------------------------
+    Formulário: FormClose
+    Ao sair do formulário desabilbita o painel
+  --------------------------------------------------------------------------}
+procedure TfrmNFC.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+    painel.Visible:= false;
+end;
+
+{--------------------------------------------------------------------------
+    Formulário: FormClose
+    Ao criar o formulário desabilbita o painel e inicializa o NFCAdapter
+  --------------------------------------------------------------------------}
+procedure TfrmNFC.FormCreate(Sender: TObject);
+begin
+   NFCAdapter :=  TNFCHelper.Create;
+   painel.Visible:= false;
+end;
+
+{--------------------------------------------------------------------------
+    MostrarPainel (titulo: string)
+    Função responsável por montar o painel que será apresentado ao usuário
+  --------------------------------------------------------------------------}
+procedure TfrmNFC.MostrarPainel(titulo: string);
+begin
+    //Habilita o painel
+     painel.Visible := True;
+     //Adiona um título
+     lbPainelTitle.Text := titulo;
+     //Informa o que deve ser realizado pelo usuário: "Aproxime o cartão"
+     lbResposta.Text := 'Aproxime o Cartão';
+     //Limpa o campo de informações
+     meResposta.Text:= '';
+     //Inicia o contador de tempo de leitura do cartão
+     Stopwatch := TStopwatch.StartNew;
+end;
+
+
+{--------------------------------------------------------------------------
+    MostrarTempoExecução
+    Função responsável por mostrar no painel o tempo realizado na leitura
+  --------------------------------------------------------------------------}
+procedure TfrmNFC.MostrarTempoExecucao;
+begin
+     Elapsed := Stopwatch.Elapsed;
+     meResposta.Text := 'Tempo de execução: ' + floattostr(Elapsed.TotalSeconds) + ' segundos';
+end;
+end.

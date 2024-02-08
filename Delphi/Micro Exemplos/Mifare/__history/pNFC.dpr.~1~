@@ -1,0 +1,14 @@
+program pNFC;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  NFC in 'NFC.pas' {FrmNFC};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TFrmNFC, FrmNFC);
+  Application.Run;
+end.

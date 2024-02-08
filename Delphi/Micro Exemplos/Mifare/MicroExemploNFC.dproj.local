@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2024/02/07 13:32:22.033,=C:\Users\almelo\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/02/07 13:38:34.345,C:\Users\almelo\Desktop\PROJETOS\MicroExemplo\GS300_NFC\NFC.fmx=C:\Users\almelo\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.fmx</Transaction>
+    <Transaction>2024/02/07 13:38:34.345,C:\Users\almelo\Desktop\PROJETOS\MicroExemplo\GS300_NFC\NFC.pas=C:\Users\almelo\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/02/07 13:38:57.843,C:\Users\almelo\Desktop\PROJETOS\MicroExemplo\GS300_NFC\pNFC.dproj=C:\Users\almelo\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2024/02/07 13:41:46.610,=C:\Users\almelo\Desktop\PROJETOS\MicroExemplo\GS300_NFC\Imports NFC\NFCHelper.pas</Transaction>
+    <Transaction>2024/02/07 13:59:08.930,=C:\Users\almelo\Desktop\PROJETOS\ExemploCompleto\Imports NFC\Androidapi.JNI.Nfc.pas</Transaction>
+    <Transaction>2024/02/07 13:59:08.954,=C:\Users\almelo\Desktop\PROJETOS\ExemploCompleto\Imports NFC\Androidapi.JNI.Nfc.Tech.pas</Transaction>
+    <Transaction>2024/02/07 13:59:08.973,=C:\Users\almelo\Desktop\PROJETOS\ExemploCompleto\Imports NFC\Androidapi.JNI.Toast.pas</Transaction>
+    <Transaction>2024/02/07 13:59:25.978,C:\Users\almelo\Desktop\PROJETOS\ExemploCompleto\Imports NFC\Androidapi.JNI.Nfc.pas=</Transaction>
+    <Transaction>2024/02/07 13:59:25.982,C:\Users\almelo\Desktop\PROJETOS\ExemploCompleto\Imports NFC\Androidapi.JNI.Nfc.Tech.pas=</Transaction>
+    <Transaction>2024/02/07 13:59:25.984,C:\Users\almelo\Desktop\PROJETOS\ExemploCompleto\Imports NFC\Androidapi.JNI.Toast.pas=</Transaction>
+    <Transaction>2024/02/07 13:59:38.829,=C:\Users\almelo\Desktop\PROJETOS\MicroExemplo\GS300_NFC\Imports NFC\Androidapi.JNI.Nfc.pas</Transaction>
+    <Transaction>2024/02/07 13:59:38.863,=C:\Users\almelo\Desktop\PROJETOS\MicroExemplo\GS300_NFC\Imports NFC\Androidapi.JNI.Nfc.Tech.pas</Transaction>
+    <Transaction>2024/02/07 13:59:38.882,=C:\Users\almelo\Desktop\PROJETOS\MicroExemplo\GS300_NFC\Imports NFC\Androidapi.JNI.Toast.pas</Transaction>
+    <Transaction>2024/02/07 16:12:59.259,C:\Users\almelo\Desktop\PROJETOS\MicroExemplo\GS300_NFC\MicroExemploNFC.dproj=C:\Users\almelo\Desktop\PROJETOS\MicroExemplo\GS300_NFC\pNFC.dproj</Transaction>
+    <Transaction>2024/02/07 16:16:16.418,C:\Users\almelo\Desktop\PROJETOS\MicroExemplo\GS300_NFC\Imports NFC\Androidapi.JNI.Nfc.pas=</Transaction>
+    <Transaction>2024/02/07 16:16:16.420,C:\Users\almelo\Desktop\PROJETOS\MicroExemplo\GS300_NFC\Imports NFC\Androidapi.JNI.Nfc.Tech.pas=</Transaction>
+    <Transaction>2024/02/07 16:16:16.422,C:\Users\almelo\Desktop\PROJETOS\MicroExemplo\GS300_NFC\Imports NFC\Androidapi.JNI.Toast.pas=</Transaction>
+    <Transaction>2024/02/07 16:16:16.475,C:\Users\almelo\Desktop\PROJETOS\MicroExemplo\GS300_NFC\Imports NFC\NFCHelper.pas=</Transaction>
+    <Transaction>2024/02/07 16:16:24.306,=C:\Users\almelo\Desktop\PROJETOS\MicroExemplo\GS300_NFC\Imports NFC\Androidapi.JNI.Nfc.Tech.pas</Transaction>
+    <Transaction>2024/02/07 16:16:24.327,=C:\Users\almelo\Desktop\PROJETOS\MicroExemplo\GS300_NFC\Imports NFC\Androidapi.JNI.Toast.pas</Transaction>
+    <Transaction>2024/02/07 16:16:24.367,=C:\Users\almelo\Desktop\PROJETOS\MicroExemplo\GS300_NFC\Imports NFC\NFCHelper.pas</Transaction>
+    <Transaction>2024/02/07 16:16:24.390,=C:\Users\almelo\Desktop\PROJETOS\MicroExemplo\GS300_NFC\Imports NFC\Androidapi.JNI.Nfc.pas</Transaction>
+  </Transactions>
+  <ActiveMobileDevice>   <NoProfile Android="400017236300175" Android64="400017236300175"/>
+  </ActiveMobileDevice>
+</BorlandProject>
