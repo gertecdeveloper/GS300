@@ -1,0 +1,145 @@
+unit uImpressora;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
+  FMX.Controls.Presentation, FMX.Surfaces, FMX.Helpers.Android, JavaInterfaces, Androidapi.Jni.GraphicsContentViewText,
+  Androidapi.JNI.JavaTypes, Androidapi.JNIBridge, Androidapi.Helpers;
+
+type
+  TFrmImpressora = class(TForm)
+    btnImprimirImagem: TButton;
+    btnImprimirQrCode: TButton;
+    btnCupom: TButton;
+    btnImprimirCodigoDeBarras: TButton;
+    lblSegundoDisplay: TLabel;
+    lblLog: TLabel;
+    procedure btnCupomClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+
+  private
+    { Private declarations }
+
+  public
+    { Public declarations }
+
+  end;
+
+var
+  FrmImpressora: TFrmImpressora;
+  str: String;
+  printHelper: JAP80PrintHelper;
+  plogo1, plogo2: JBitmap;
+
+  function StringToJString(const Str: string): JString;
+  procedure PrintSpace(n: Integer);
+  procedure PrintCupom;
+  function BitmapToJBitmap(const ABitmap: TBitmap): JBitmap;
+
+implementation
+
+{$R *.fmx}
+
+function JStringToString(const JStr: JString): string;
+begin
+  Result := TAndroidHelper.JStringToString(JStr);
+end;
+
+function StringToJString(const Str: string): JString;
+begin
+  Result := TAndroidHelper.StringToJString(Str);
+end;
+
+procedure TFrmImpressora.FormCreate(Sender: TObject);
+begin
+inherited;
+  //Inicia a impressora
+  printHelper:= TJAP80PrintHelper.JavaClass.getInstance();
+  printHelper.initPrint(TAndroidHelper.Context.getApplicationContext);
+
+end;
+
+
+procedure TFrmImpressora.btnCupomClick(Sender: TObject);
+begin
+  //Imprime
+  printHelper.printData(StringToJString('Gertec do Brasil'), 32, 0, false, 1, 80, 0);
+
+  PrintSpace(5);
+  printHelper.printStart;
+
+
+end;
+
+
+procedure PrintCupom;
+begin
+  printHelper.printData(StringToJString('Gertec do Brasil'), 32, 0, False, 1, 80, 0);
+  printHelper.printData(StringToJString('Av. Jabaguara, 3060 - Mirandopolis'), 30, 0, False, 1, 80, 0);
+  printHelper.printData(StringToJString('São Paulo - Sp - CEP: 04046-500'), 30, 0, False, 1, 80, 0);
+  printHelper.printData(StringToJString('CNPJ: 03.654.119/0001-76'), 30, 0, False, 1, 80, 0);
+  printHelper.printData(StringToJString('IE: 286.502.952.112'), 30, 0, False, 1, 80, 0);
+  printHelper.printData(StringToJString('______________________________________'), 30, 0, False, 1, 80, 1);
+  printHelper.printData(StringToJString('Cupom Fiscal Eletronico'), 32, 0, False, 1, 80, 0);
+  printHelper.printData(StringToJString('Produto          Quant. V. Un. Valor'), 30, 0, False, 0, 80, 0);
+  printHelper.printData(StringToJString('Pêssego Branco     2     6.00   12.00'), 30, 0, False, 0, 80, 0);
+  printHelper.printData(StringToJString('Iogurte de morango 4    12.00   48.00'), 30, 0, False, 0, 80, 0);
+  printHelper.printData(StringToJString('Iogurte de frutas  10   10.00  100.00'), 30, 0, False, 0, 80, 0);
+  printHelper.printData(StringToJString('Bolo de frutas     10    4.00   40.00'), 30, 0, False, 0, 80, 0);
+  printHelper.printData(StringToJString('Morangos frescos   100  16.00 1600.00'), 30, 0, False, 0, 80, 0);
+  printHelper.printData(StringToJString('______________________________________'), 30, 0, False, 1, 80, 1);
+  printHelper.printData(StringToJString('Total: R$1800.00'), 32, 0, False, 2, 80, 0);
+  printHelper.printData(StringToJString('______________________________________'), 30, 0, False, 1, 80, 1);
+  printHelper.printData(StringToJString('N: 0000000139'), 30, 0, False, 0, 80, 0);
+  printHelper.printData(StringToJString('Serie: 65     20/08/2021'), 30, 0, False, 0, 80, 0);
+  printHelper.printData(StringToJString('______________________________________'), 30, 0, False, 1, 80, 1);
+  printHelper.printData(StringToJString('Consulte pela chave de acesso no site'), 30, 0, False, 1, 80, 0);
+  printHelper.printData(StringToJString('http://www.nfe.fazenda.sp.gov.br'), 30, 0, False, 1, 80, 0);
+  printHelper.printData(StringToJString('Chave de acesso:'), 30, 0, False, 1, 80, 0);
+  printHelper.printData(StringToJString('00000111112222233333444455556666777788889999'), 25, 0, False, 1, 56, 0);
+  printHelper.printData(StringToJString('______________________________________'), 30, 0, False, 1, 80, 1);
+  printHelper.printData(StringToJString('Consultor não identificado'), 30, 0, False, 1, 80, 0);
+  printHelper.printData(StringToJString('CPF: 000.000.000-00'), 30, 0, False, 1, 80, 0);
+end;
+
+
+
+
+procedure PrintSpace(n: Integer);
+var
+  str_space: TStringBuilder;
+begin
+  if n < 0 then
+    Exit;
+
+  str_space := TStringBuilder.Create;
+  try
+    for var i := 0 to n - 1 do
+      str_space.Append(sLineBreak);
+
+    printHelper.printData(StringToJString(str_space.toString), 32, 0, False, 1, 80, 0);
+
+  finally
+    str_space.Free;
+  end;
+
+end;
+
+function BitmapToJBitmap(const ABitmap: TBitmap): JBitmap;
+var
+  LSurface: TBitmapSurface;
+begin
+  Result := TJBitmap.JavaClass.createBitmap(ABitmap.Width, ABitmap.Height, TJBitmap_Config.JavaClass.ARGB_8888);
+  LSurface := TBitmapSurface.Create;
+  try
+    LSurface.Assign(ABitmap);
+    SurfaceToJBitmap(LSurface, Result);
+  finally
+    LSurface.Free;
+  end;
+end;
+
+
+end.

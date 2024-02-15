@@ -1,0 +1,14 @@
+program GS300_Impressora;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  uImpressora in 'uImpressora.pas' {FrmImpressora};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TFrmImpressora, FrmImpressora);
+  Application.Run;
+end.

@@ -1,0 +1,201 @@
+unit uPrinter;
+
+interface
+
+uses
+
+  GS300Interfaces,
+
+
+  System.SysUtils, System.UITypes, System.Classes,
+  System.Variants, FMX.Graphics, FMX.Dialogs, System.Threading,
+  FMX.Helpers.Android, FMX.Surfaces, FMX.FontGlyphs,
+  Androidapi.JNI.GraphicsContentViewText, System.IOUtils, Androidapi.Helpers,
+  Androidapi.JNI.App, AndroidAPI.JNIBridge, Androidapi.JNI.JavaTypes,
+  uTratamentoDeImagem;
+
+  type
+  TPrinter = class
+
+  private
+    { private declarations }
+
+  protected
+    { protected declarations }
+  public
+
+    { public declarations }
+
+    printInitFlag: integer;
+    printHelper: JAP80PrintHelper;
+
+    procedure IniciaImpressoraGS300;
+    procedure ImprimeCodigoDeBarras(strPrint: string;  tipoQrCode: integer;
+              altura: Integer;  largura:Integer;  alinhamento: Integer;
+              posicao: integer);
+    procedure ImprimeQRCode(strPrint: string);
+    procedure ImprimeCupom;
+    procedure ImprimirImagem(Imagem:TBitmap);
+    procedure CortaPapel();
+
+
+
+    constructor Create;
+
+  end;
+
+  var
+  GS300Printer: TPrinter;
+  threadTask :ITask;
+
+implementation
+
+procedure TPrinter.IniciaImpressoraGS300;
+begin
+
+  if (printInitFlag = 0) then
+    printHelper.initPrint(TAndroidHelper.Activity);
+    printInitFlag := 1;
+
+end;
+
+procedure TPrinter.ImprimeCodigoDeBarras(
+  strPrint: string;
+  tipoQrCode: integer;
+  altura: Integer;
+  largura:Integer;
+  alinhamento: Integer;
+  posicao: integer
+);
+var
+  linhas: integer;
+begin
+
+  printHelper.printBarCode(StringToJString(strPrint), tipoQrCode, altura, largura, alinhamento, posicao );
+
+  printHelper.printStart;
+
+  //Avança papel
+  for linhas := 1 to 3 do
+    printHelper.printData(StringToJString(' '), 32, 0, false, 1, 80, 0);
+
+  //Inicia a impressão
+  printHelper.printStart;
+
+  //Corta papel
+  CortaPapel;
+
+end;
+
+procedure TPrinter.ImprimeQRCode( strPrint: string);
+var
+  tamanhoDaFonte: Integer;
+  alinhamento: integer;
+  linhas: integer;
+
+begin
+  tamanhoDaFonte:= 200;
+  alinhamento:= 1;
+
+  printHelper.printQRCode(StringToJString(strPrint), tamanhoDaFonte, alinhamento );
+  printHelper.printStart;
+  //Avança papel
+  for linhas := 1 to 3 do
+    printHelper.printData(StringToJString(' '), 32, 0, false, 1, 80, 0);
+
+  //Inicia a impressão
+  printHelper.printStart;
+
+  //Corta papel
+  CortaPapel;
+
+end;
+
+procedure TPrinter.ImprimeCupom;
+var
+  linhas: integer;
+begin
+  //Escreve o texto que será impresso
+  printHelper.printData(StringToJString('Gertec do Brasil'), 32, 0, False, 1, 80, 0);
+  printHelper.printData(StringToJString('Av. Jabaguara, 3060 - Mirandopolis'), 30, 0, False, 1, 80, 0);
+  printHelper.printData(StringToJString('São Paulo - Sp - CEP: 04046-500'), 30, 0, False, 1, 80, 0);
+  printHelper.printData(StringToJString('CNPJ: 03.654.119/0001-76'), 30, 0, False, 1, 80, 0);
+  printHelper.printData(StringToJString('IE: 286.502.952.112'), 30, 0, False, 1, 80, 0);
+  printHelper.printData(StringToJString('______________________________________'), 30, 0, False, 1, 80, 1);
+  printHelper.printData(StringToJString('Cupom Fiscal Eletronico'), 32, 0, False, 1, 80, 0);
+  printHelper.printData(StringToJString('Produto               Quant.  V. Un.     Valor'), 30, 0, False, 0, 80, 0);
+  printHelper.printData(StringToJString('Pêssego Branco        2      6.00    12.00'), 30, 0, False, 0, 80, 0);
+  printHelper.printData(StringToJString('Iogurte de morango  4    12.00   48.00'), 30, 0, False, 0, 80, 0);
+  printHelper.printData(StringToJString('Iogurte de frutas       10   10.00  100.00'), 30, 0, False, 0, 80, 0);
+  printHelper.printData(StringToJString('Bolo de frutas            10    4.00    40.00'), 30, 0, False, 0, 80, 0);
+  printHelper.printData(StringToJString('Morangos frescos    100  16.00  1600.00'), 30, 0, False, 0, 80, 0);
+  printHelper.printData(StringToJString('______________________________________'), 30, 0, False, 1, 80, 1);
+  printHelper.printData(StringToJString('Total: R$1800.00'), 32, 0, False, 2, 80, 0);
+  printHelper.printData(StringToJString('______________________________________'), 30, 0, False, 1, 80, 1);
+  printHelper.printData(StringToJString('N: 0000000139'), 30, 0, False, 0, 80, 0);
+  printHelper.printData(StringToJString('Serie: 65     20/08/2021'), 30, 0, False, 0, 80, 0);
+  printHelper.printData(StringToJString('______________________________________'), 30, 0, False, 1, 80, 1);
+  printHelper.printData(StringToJString('Consulte pela chave de acesso no site'), 30, 0, False, 1, 80, 0);
+  printHelper.printData(StringToJString('http://www.nfe.fazenda.sp.gov.br'), 30, 0, False, 1, 80, 0);
+  printHelper.printData(StringToJString('Chave de acesso:'), 30, 0, False, 1, 80, 0);
+  printHelper.printData(StringToJString('00000111112222233333444455556666777788889999'), 25, 0, False, 1, 56, 0);
+  printHelper.printData(StringToJString('______________________________________'), 30, 0, False, 1, 80, 1);
+  printHelper.printData(StringToJString('Consultor não identificado'), 30, 0, False, 1, 80, 0);
+  printHelper.printData(StringToJString('CPF: 000.000.000-00'), 30, 0, False, 1, 80, 0);
+
+  //Avança papel
+  for linhas := 1 to 3 do
+    printHelper.printData(StringToJString(' '), 32, 0, false, 1, 80, 0);
+
+  //Inicia a impressão
+  printHelper.printStart;
+
+  //Corta papel
+  CortaPapel;
+end;
+
+procedure TPrinter.ImprimirImagem(Imagem:TBitmap);
+var
+   linhas: integer;
+begin
+
+  printHelper.printBitmap(BitmapToJBitmap(Imagem), 1, 80);
+   //Avança papel
+  for linhas := 1 to 3 do
+    printHelper.printData(StringToJString(' '), 32, 0, false, 1, 80, 0);
+
+  //Imprime
+  printHelper.printStart;
+  //Corta papel
+  CortaPapel;
+
+end;
+
+procedure TPrinter.CortaPapel();
+begin
+
+  printHelper.cutPaper(1);
+  printHelper.printStart;
+
+end;
+
+
+constructor TPrinter.Create;
+begin
+
+end;
+
+initialization
+  GS300Printer := TPrinter.Create;
+  GS300Printer.printInitFlag := 0;
+
+  threadTask := TTask.Create(
+    procedure()
+    begin
+      GS300Printer.printHelper := TJAP80PrintHelper.JavaClass.getInstance;
+      GS300Printer.IniciaImpressoraGS300;
+    end);
+
+  threadTask.Start;
+
+end.

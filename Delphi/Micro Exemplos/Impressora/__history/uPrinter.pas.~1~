@@ -1,0 +1,110 @@
+unit uPrinter;
+
+interface
+
+uses
+
+  GS300Interfaces,
+
+
+  System.SysUtils, System.UITypes, System.Classes,
+  System.Variants, FMX.Graphics, FMX.Dialogs, System.Threading,
+  FMX.Helpers.Android, FMX.Surfaces, FMX.FontGlyphs,
+  Androidapi.JNI.GraphicsContentViewText, System.IOUtils, Androidapi.Helpers,
+  Androidapi.JNI.App, AndroidAPI.JNIBridge, Androidapi.JNI.JavaTypes;
+
+type
+
+  T_ALINHAMENTO   = (ESQUERDA, CENTRO, DIREITA);
+  T_TAMANHO_PAPEL = (PAPER58, PAPER80);
+  T_TIPO_BARCODE  = (UPCA, UPCE, EAN13, EAN8, CODE39, ITF, CODABAR, CODE93, CODE128A, CODE128B, CODE128C);
+
+  TPrinter = class
+  private
+    { private declarations }
+
+  protected
+    { protected declarations }
+  public
+
+    { public declarations }
+
+    printInitFlag: integer;
+    iPRNTR: JAP80PrintHelper;
+    aguardarComandoDeImpressao: boolean;
+
+    procedure iniciarImpressora;
+    procedure imprimirTexto(strPrint: string; fontSize: Integer = 32; textStyle: Integer = 0; isUnderLine: Boolean = false; alignment: integer = 1; paperWidth: Integer = 80; linespace: integer = 0);
+    {procedure aguardarComandoImpressao(value:boolean);
+
+    procedure imprimirTexto(strPrint: string; fontSize: Integer = 32; textStyle: Integer = 0; isUnderLine: Boolean = false; alignment: integer = 1; paperWidth: Integer = 80; linespace: integer = 0);
+    procedure imprimirCodigoDeBarras(strPrint: string; tipoQrCode: integer; altura: Integer; largura:Integer; alinhamento: Integer; posicao: integer  );
+    procedure imprimirQRCode(strPrint: string; fontSize: Integer = 32; alignment: integer = 1 );
+    procedure avancarLinha(linhas: integer=1);
+    procedure cortarPapel();
+    procedure imprimirImagem(Imagem:TBitmap);
+    procedure iniciarImpressao; }
+
+    constructor Create;
+
+  end;
+
+var
+  GertecPrinter: TPrinter;
+  aTask: ITask;
+
+implementation
+
+
+
+procedure TPrinter.iniciarImpressora;
+begin
+
+  if (printInitFlag = 0) then
+   iPRNTR.initPrint(TAndroidHelper.Activity);
+
+  printInitFlag := 1;
+  aguardarComandoDeImpressao:= false;
+
+end;
+
+procedure TPrinter.imprimirTexto(
+  strPrint: string;
+  fontSize: Integer = 32;
+  textStyle: Integer = 0;
+  isUnderLine: Boolean = false;
+  alignment: integer = 1;
+  paperWidth: Integer = 80;
+  linespace: integer = 0
+);
+begin
+
+  iPRNTR.printData(StringToJString(strPrint), fontSize, textStyle, isUnderLine, alignment, paperWidth, linespace);
+
+  if aguardarComandoDeImpressao=false then
+   iPRNTR.printStart;
+
+end;
+
+constructor TPrinter.Create;
+begin
+
+  aguardarComandoDeImpressao := false;
+
+end;
+
+initialization
+  GertecPrinter := TPrinter.Create;
+  GertecPrinter.printInitFlag := 0;
+
+  aTask := TTask.Create(
+    procedure()
+    begin
+  //    GertecPrinter.iPRNTR := TJAP80PrintHelper.JavaClass.getInstance;
+     GertecPrinter.iniciarImpressora;
+    end);
+
+  aTask.Start;
+
+end.
+
