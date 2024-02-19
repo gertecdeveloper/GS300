@@ -2,9 +2,9 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2024/01/19 09:46:39.000.897,=C:\Users\almelo\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2024/01/19 09:52:04.000.264,D:\Área Principal\01 - PROJETOS\ANDROID\DELPHI\Projetos GS300\MicroExemplo\GS300_Impressora\uImpressora.fmx=C:\Users\almelo\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.fmx</Transaction>
-    <Transaction>2024/01/19 09:52:04.000.264,D:\Área Principal\01 - PROJETOS\ANDROID\DELPHI\Projetos GS300\MicroExemplo\GS300_Impressora\uImpressora.pas=C:\Users\almelo\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2024/01/19 09:52:17.000.872,D:\Área Principal\01 - PROJETOS\ANDROID\DELPHI\Projetos GS300\MicroExemplo\GS300_Impressora\GS300_Impressora.dproj=C:\Users\almelo\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2024/01/19 09:52:04.000.264,C:\Users\almelo\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas=D:\Área Principal\01 - PROJETOS\ANDROID\DELPHI\Projetos GS300\MicroExemplo\GS300_Impressora\uImpressora.pas</Transaction>
+    <Transaction>2024/01/19 09:52:04.000.264,C:\Users\almelo\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.fmx=D:\Área Principal\01 - PROJETOS\ANDROID\DELPHI\Projetos GS300\MicroExemplo\GS300_Impressora\uImpressora.fmx</Transaction>
+    <Transaction>2024/01/19 09:52:17.000.872,C:\Users\almelo\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj=D:\Área Principal\01 - PROJETOS\ANDROID\DELPHI\Projetos GS300\MicroExemplo\GS300_Impressora\GS300_Impressora.dproj</Transaction>
     <Transaction>2024/01/19 09:53:04.000.901,=D:\Área Principal\01 - PROJETOS\ANDROID\DELPHI\Projetos GS300\MicroExemplo\GS300_Impressora\libs\JavaInterfaces.pas</Transaction>
     <Transaction>2024/01/19 09:53:15.000.130,=D:\Área Principal\01 - PROJETOS\ANDROID\DELPHI\Projetos GS300\MicroExemplo\GS300_Impressora\util\uFormat.pas</Transaction>
     <Transaction>2024/01/19 09:53:21.000.990,=D:\Área Principal\01 - PROJETOS\ANDROID\DELPHI\Projetos GS300\MicroExemplo\GS300_Impressora\AndroidTTS.pas</Transaction>
@@ -16,7 +16,7 @@
     <Transaction>2024/01/19 14:04:17.000.063,=D:\Área Principal\01 - PROJETOS\ANDROID\DELPHI\Projetos GS300\MicroExemplo\GS300_Impressora\libs\JavaInterfaces.pas</Transaction>
     <Transaction>2024/01/19 14:12:39.000.666,=D:\Área Principal\01 - PROJETOS\ANDROID\DELPHI\Projetos GS300\MicroExemplo\GS300_Impressora\libs\GS300Interfaces.pas</Transaction>
     <Transaction>2024/01/19 14:29:26.000.993,=D:\Área Principal\01 - PROJETOS\ANDROID\DELPHI\Projetos GS300\MicroExemplo\GS300_Impressora\Unit1.pas</Transaction>
-    <Transaction>2024/01/19 14:29:49.000.482,D:\Área Principal\01 - PROJETOS\ANDROID\DELPHI\Projetos GS300\MicroExemplo\GS300_Impressora\uPrinter.pas=D:\Área Principal\01 - PROJETOS\ANDROID\DELPHI\Projetos GS300\MicroExemplo\GS300_Impressora\Unit1.pas</Transaction>
+    <Transaction>2024/01/19 14:29:49.000.482,D:\Área Principal\01 - PROJETOS\ANDROID\DELPHI\Projetos GS300\MicroExemplo\GS300_Impressora\Unit1.pas=D:\Área Principal\01 - PROJETOS\ANDROID\DELPHI\Projetos GS300\MicroExemplo\GS300_Impressora\uPrinter.pas</Transaction>
     <Transaction>2024/01/19 17:13:13.000.716,=D:\Área Principal\01 - PROJETOS\ANDROID\DELPHI\Projetos GS300\MicroExemplo\GS300_Impressora\libs\GS300Printer.pas</Transaction>
     <Transaction>2024/01/19 17:14:52.000.918,=D:\Área Principal\01 - PROJETOS\ANDROID\DELPHI\Projetos GS300\MicroExemplo\GS300_Impressora\util\uFuncoes.pas</Transaction>
     <Transaction>2024/01/22 09:33:50.000.125,=D:\Área Principal\01 - PROJETOS\ANDROID\DELPHI\Projetos GS300\MicroExemplo\GS300_Impressora\libs\GS300_APlibrary.jar</Transaction>
@@ -24,10 +24,10 @@
     <Transaction>2024/02/14 18:14:29.000.105,=C:\Users\almelo\Desktop\PROJETOS\MicroExemplo\GS300_Impressora\libs\GS300_APlibrary.jar</Transaction>
     <Transaction>2024/02/14 18:17:35.000.344,=C:\Users\almelo\Desktop\PROJETOS\MicroExemplo\GS300_Impressora\util\uTratamentoDeImagem.pas</Transaction>
     <Transaction>2024/02/14 18:17:50.000.056,C:\Users\almelo\Desktop\PROJETOS\MicroExemplo\GS300_Impressora\util\uFuncoes.pas=</Transaction>
-    <Transaction>2024/02/15 11:15:38.287,C:\Users\almelo\Desktop\PROJETOS\MicroExemplo\GS300_Impressora\libs\GS300Printer.pas=</Transaction>
+    <Transaction>2024/02/15 11:15:38.000.287,C:\Users\almelo\Desktop\PROJETOS\MicroExemplo\GS300_Impressora\libs\GS300Printer.pas=</Transaction>
   </Transactions>
 	<ActiveMobileDevice>
-		<NoProfile Android="400017236300175" Android64="400017236300175"/>
+		<NoProfile Android="" Android64=""/>
 	</ActiveMobileDevice>
 	<BT_BuildType>Debug</BT_BuildType>
 </BorlandProject>

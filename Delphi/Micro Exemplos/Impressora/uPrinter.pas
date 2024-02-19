@@ -69,21 +69,32 @@ procedure TPrinter.ImprimeCodigoDeBarras(
 );
 var
   linhas: integer;
+  status: integer;
 begin
+  //Verifica o status da impressora
+  status:= printHelper.getPrinterState(TAndroidHelper.Activity) ;
 
-  printHelper.printBarCode(StringToJString(strPrint), tipoQrCode, altura, largura, alinhamento, posicao );
+  if status = 1 then  begin
+    printHelper.printBarCode(StringToJString(strPrint), tipoQrCode, altura, largura, alinhamento, posicao );
 
-  printHelper.printStart;
+    printHelper.printStart;
 
-  //Avança papel
-  for linhas := 1 to 3 do
-    printHelper.printData(StringToJString(' '), 32, 0, false, 1, 80, 0);
+    //Avança papel
+    for linhas := 1 to 3 do
+      printHelper.printData(StringToJString(' '), 32, 0, false, 1, 80, 0);
 
-  //Inicia a impressão
-  printHelper.printStart;
+    //Inicia a impressão
+    printHelper.printStart;
 
-  //Corta papel
-  CortaPapel;
+    //Corta papel
+    CortaPapel;
+  end else
+  if status = 4 then
+    Showmessage('Falta papel. Verifique a impressora')
+  else if status = 5 then
+    Showmessage('Temperatura acima do esperado. Verifique a impressora')
+  else
+    Showmessage('Erro desconhecido. Verifique a impressora') ;
 
 end;
 
@@ -92,82 +103,119 @@ var
   tamanhoDaFonte: Integer;
   alinhamento: integer;
   linhas: integer;
+  status: integer;
 
 begin
   tamanhoDaFonte:= 200;
   alinhamento:= 1;
 
-  printHelper.printQRCode(StringToJString(strPrint), tamanhoDaFonte, alinhamento );
-  printHelper.printStart;
-  //Avança papel
-  for linhas := 1 to 3 do
-    printHelper.printData(StringToJString(' '), 32, 0, false, 1, 80, 0);
+  //Recebe o status da impressora
+  status:= printHelper.getPrinterState(TAndroidHelper.Activity) ;
+  //Verifica se a impressora está funcional
+  if status = 1 then  begin
 
-  //Inicia a impressão
-  printHelper.printStart;
-
-  //Corta papel
-  CortaPapel;
+    printHelper.printQRCode(StringToJString(strPrint), tamanhoDaFonte, alinhamento );
+    printHelper.printStart;
+    //Avança papel
+    for linhas := 1 to 3 do
+      printHelper.printData(StringToJString(' '), 32, 0, false, 1, 80, 0);
+      //Inicia a impressão
+      printHelper.printStart;
+      //Corta papel
+      CortaPapel;
+    end else
+    //Caso a impressora esteja sem papel
+    if status = 4 then
+      Showmessage('Falta papel. Verifique a impressora')
+    //Caso seja detectado alta temperatura
+    else if status = 5 then
+      Showmessage('Temperatura acima do esperado. Verifique a impressora')
+    else
+      Showmessage('Erro desconhecido. Verifique a impressora') ;
 
 end;
 
 procedure TPrinter.ImprimeCupom;
 var
   linhas: integer;
+  status: integer;
 begin
-  //Escreve o texto que será impresso
-  printHelper.printData(StringToJString('Gertec do Brasil'), 32, 0, False, 1, 80, 0);
-  printHelper.printData(StringToJString('Av. Jabaguara, 3060 - Mirandopolis'), 30, 0, False, 1, 80, 0);
-  printHelper.printData(StringToJString('São Paulo - Sp - CEP: 04046-500'), 30, 0, False, 1, 80, 0);
-  printHelper.printData(StringToJString('CNPJ: 03.654.119/0001-76'), 30, 0, False, 1, 80, 0);
-  printHelper.printData(StringToJString('IE: 286.502.952.112'), 30, 0, False, 1, 80, 0);
-  printHelper.printData(StringToJString('______________________________________'), 30, 0, False, 1, 80, 1);
-  printHelper.printData(StringToJString('Cupom Fiscal Eletronico'), 32, 0, False, 1, 80, 0);
-  printHelper.printData(StringToJString('Produto               Quant.  V. Un.     Valor'), 30, 0, False, 0, 80, 0);
-  printHelper.printData(StringToJString('Pêssego Branco        2      6.00    12.00'), 30, 0, False, 0, 80, 0);
-  printHelper.printData(StringToJString('Iogurte de morango  4    12.00   48.00'), 30, 0, False, 0, 80, 0);
-  printHelper.printData(StringToJString('Iogurte de frutas       10   10.00  100.00'), 30, 0, False, 0, 80, 0);
-  printHelper.printData(StringToJString('Bolo de frutas            10    4.00    40.00'), 30, 0, False, 0, 80, 0);
-  printHelper.printData(StringToJString('Morangos frescos    100  16.00  1600.00'), 30, 0, False, 0, 80, 0);
-  printHelper.printData(StringToJString('______________________________________'), 30, 0, False, 1, 80, 1);
-  printHelper.printData(StringToJString('Total: R$1800.00'), 32, 0, False, 2, 80, 0);
-  printHelper.printData(StringToJString('______________________________________'), 30, 0, False, 1, 80, 1);
-  printHelper.printData(StringToJString('N: 0000000139'), 30, 0, False, 0, 80, 0);
-  printHelper.printData(StringToJString('Serie: 65     20/08/2021'), 30, 0, False, 0, 80, 0);
-  printHelper.printData(StringToJString('______________________________________'), 30, 0, False, 1, 80, 1);
-  printHelper.printData(StringToJString('Consulte pela chave de acesso no site'), 30, 0, False, 1, 80, 0);
-  printHelper.printData(StringToJString('http://www.nfe.fazenda.sp.gov.br'), 30, 0, False, 1, 80, 0);
-  printHelper.printData(StringToJString('Chave de acesso:'), 30, 0, False, 1, 80, 0);
-  printHelper.printData(StringToJString('00000111112222233333444455556666777788889999'), 25, 0, False, 1, 56, 0);
-  printHelper.printData(StringToJString('______________________________________'), 30, 0, False, 1, 80, 1);
-  printHelper.printData(StringToJString('Consultor não identificado'), 30, 0, False, 1, 80, 0);
-  printHelper.printData(StringToJString('CPF: 000.000.000-00'), 30, 0, False, 1, 80, 0);
+  //Verifica o status da impressora
+  status:= printHelper.getPrinterState(TAndroidHelper.Activity) ;
 
-  //Avança papel
-  for linhas := 1 to 3 do
-    printHelper.printData(StringToJString(' '), 32, 0, false, 1, 80, 0);
+  if status = 1 then  begin
+      //Escreve o texto que será impresso
+      printHelper.printData(StringToJString('Gertec do Brasil'), 32, 0, False, 1, 80, 0);
+      printHelper.printData(StringToJString('Av. Jabaguara, 3060 - Mirandopolis'), 30, 0, False, 1, 80, 0);
+      printHelper.printData(StringToJString('São Paulo - Sp - CEP: 04046-500'), 30, 0, False, 1, 80, 0);
+      printHelper.printData(StringToJString('CNPJ: 03.654.119/0001-76'), 30, 0, False, 1, 80, 0);
+      printHelper.printData(StringToJString('IE: 286.502.952.112'), 30, 0, False, 1, 80, 0);
+      printHelper.printData(StringToJString('______________________________________'), 30, 0, False, 1, 80, 1);
+      printHelper.printData(StringToJString('Cupom Fiscal Eletronico'), 32, 0, False, 1, 80, 0);
+      printHelper.printData(StringToJString('Produto               Quant.  V. Un.     Valor'), 30, 0, False, 0, 80, 0);
+      printHelper.printData(StringToJString('Pêssego Branco        2      6.00    12.00'), 30, 0, False, 0, 80, 0);
+      printHelper.printData(StringToJString('Iogurte de morango  4    12.00   48.00'), 30, 0, False, 0, 80, 0);
+      printHelper.printData(StringToJString('Iogurte de frutas       10   10.00  100.00'), 30, 0, False, 0, 80, 0);
+      printHelper.printData(StringToJString('Bolo de frutas            10    4.00    40.00'), 30, 0, False, 0, 80, 0);
+      printHelper.printData(StringToJString('Morangos frescos    100  16.00  1600.00'), 30, 0, False, 0, 80, 0);
+      printHelper.printData(StringToJString('______________________________________'), 30, 0, False, 1, 80, 1);
+      printHelper.printData(StringToJString('Total: R$1800.00'), 32, 0, False, 2, 80, 0);
+      printHelper.printData(StringToJString('______________________________________'), 30, 0, False, 1, 80, 1);
+      printHelper.printData(StringToJString('N: 0000000139'), 30, 0, False, 0, 80, 0);
+      printHelper.printData(StringToJString('Serie: 65     20/08/2021'), 30, 0, False, 0, 80, 0);
+      printHelper.printData(StringToJString('______________________________________'), 30, 0, False, 1, 80, 1);
+      printHelper.printData(StringToJString('Consulte pela chave de acesso no site'), 30, 0, False, 1, 80, 0);
+      printHelper.printData(StringToJString('http://www.nfe.fazenda.sp.gov.br'), 30, 0, False, 1, 80, 0);
+      printHelper.printData(StringToJString('Chave de acesso:'), 30, 0, False, 1, 80, 0);
+      printHelper.printData(StringToJString('00000111112222233333444455556666777788889999'), 25, 0, False, 1, 56, 0);
+      printHelper.printData(StringToJString('______________________________________'), 30, 0, False, 1, 80, 1);
+      printHelper.printData(StringToJString('Consultor não identificado'), 30, 0, False, 1, 80, 0);
+      printHelper.printData(StringToJString('CPF: 000.000.000-00'), 30, 0, False, 1, 80, 0);
 
-  //Inicia a impressão
-  printHelper.printStart;
+      //Avança papel
+      for linhas := 1 to 3 do
+        printHelper.printData(StringToJString(' '), 32, 0, false, 1, 80, 0);
 
-  //Corta papel
-  CortaPapel;
+      //Inicia a impressão
+      printHelper.printStart;
+
+      //Corta papel
+      CortaPapel;
+  end else
+  if status = 4 then
+    Showmessage('Falta papel. Verifique a impressora')
+  else if status = 5 then
+    Showmessage('Temperatura acima do esperado. Verifique a impressora')
+  else
+    Showmessage('Erro desconhecido. Verifique a impressora') ;
+
 end;
 
 procedure TPrinter.ImprimirImagem(Imagem:TBitmap);
 var
    linhas: integer;
+   status: integer;
 begin
+   //Verifica o status da impressora
+  status:= printHelper.getPrinterState(TAndroidHelper.Activity) ;
 
-  printHelper.printBitmap(BitmapToJBitmap(Imagem), 1, 80);
-   //Avança papel
-  for linhas := 1 to 3 do
-    printHelper.printData(StringToJString(' '), 32, 0, false, 1, 80, 0);
+  if status = 1 then  begin
+    printHelper.printBitmap(BitmapToJBitmap(Imagem), 1, 80);
+    //Avança papel
+    for linhas := 1 to 3 do
+        printHelper.printData(StringToJString(' '), 32, 0, false, 1, 80, 0);
 
-  //Imprime
-  printHelper.printStart;
-  //Corta papel
-  CortaPapel;
+    //Imprime
+    printHelper.printStart;
+    //Corta papel
+    CortaPapel;
+  end else
+  if status = 4 then
+    Showmessage('Falta papel. Verifique a impressora')
+  else if status = 5 then
+    Showmessage('Temperatura acima do esperado. Verifique a impressora')
+  else
+    Showmessage('Erro desconhecido. Verifique a impressora') ;
 
 end;
 
@@ -178,7 +226,6 @@ begin
   printHelper.printStart;
 
 end;
-
 
 constructor TPrinter.Create;
 begin
