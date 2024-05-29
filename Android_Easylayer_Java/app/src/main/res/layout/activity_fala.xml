@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_margin="4dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Fala.FalaActivity">
+
+    <TextView
+        android:id="@+id/textEvento2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="124dp"
+        android:layout_marginRight="152dp"
+        android:text="Digite a sua Frase Aqui"
+        android:textColor="@color/azulGertec"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnFrase2"
+        android:layout_width="399dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="@color/azulGertec"
+        android:text="Frase 2"
+        android:textColor="@color/white"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnFrase1" />
+
+    <EditText
+        android:id="@+id/txtFrase"
+        android:layout_width="399dp"
+        android:layout_height="121dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="60dp"
+        android:background="@drawable/shape_list"
+        android:ems="10"
+        android:focusable="auto"
+        android:freezesText="true"
+        android:inputType="textMultiLine|text|textImeMultiLine"
+        android:singleLine="false"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textEvento2" />
+
+    <Button
+        android:id="@+id/btnFrase4"
+        android:layout_width="399dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="60dp"
+        android:backgroundTint="@color/azulGertec"
+        android:text="Fraze digitada"
+        android:textColor="@color/white"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/btnFrase3"
+        app:layout_constraintTop_toBottomOf="@+id/txtFrase"
+        tools:ignore="NotSibling" />
+
+    <Button
+    android:id="@+id/btnFrase1"
+        android:layout_width="399dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/azulGertec"
+        android:text="Frase 1"
+        android:textColor="@color/white"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textEvento1" />
+
+<Button
+        android:id="@+id/btnFrase3"
+        android:layout_width="399dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/azulGertec"
+        android:text="Frase 3"
+        android:textColor="@color/white"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnFrase2" />
+
+    <TextView
+        android:id="@+id/textEvento1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="172dp"
+        android:layout_marginTop="124dp"
+        android:text="Frases prontas"
+        android:textColor="@color/azulGertec"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

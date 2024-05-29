@@ -1,0 +1,52 @@
+plugins {
+    alias(libs.plugins.androidApplication)
+}
+
+android {
+    namespace 'com.example.easylayer_110_gs300'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.easylayer_110_gs300"
+        minSdk 27
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    
+    //Implementação da Easy Layer
+    implementation files('libs/EasyLayer_release.aar')
+
+    // Lib para o TEF
+    implementation (libs.gson)
+
+    //API de porta serial
+    implementation libs.android.serialport
+
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+    implementation project(':TextToSpeaks')
+    implementation project(':satFuncoes')
+    implementation project(':MSitef')
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+}

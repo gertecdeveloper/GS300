@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Sat.MenuSat"
+    android:background="@color/white">
+
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:text="GERSAT - Aplicativo de Teste"
+        android:textAlignment="center"
+        android:textColor="@color/azulGertec"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonAtivar2"
+        android:layout_width="399dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="64dp"
+        android:backgroundTint="@color/azulGertec"
+        android:text="ATIVAR ASSINATURA"
+        android:textColor="@color/white"
+        app:cornerRadius="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <Button
+        android:id="@+id/buttonRede"
+        android:layout_width="399dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="@color/azulGertec"
+        android:text="Configurações de rede"
+        android:textColor="@color/white"
+        app:cornerRadius="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAtivar2"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/buttonAlterar2"
+        android:layout_width="399dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/azulGertec"
+        android:text="Alterar Código de Ativação"
+        android:textColor="@color/white"
+        app:cornerRadius="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRede" />
+
+    <Button
+        android:id="@+id/buttonAssociar2"
+        android:layout_width="399dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="@color/azulGertec"
+        android:text="ASSOCIAR ASSINATURA"
+        android:textColor="@color/white"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <Button
+        android:id="@+id/buttonOutros"
+        android:layout_width="399dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="@color/azulGertec"
+        android:text="OUTRAS FUNÇÕES"
+        android:textColor="@color/white"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonTeste" />
+
+    <Button
+        android:id="@+id/buttonTeste"
+        android:layout_width="399dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="@color/azulGertec"
+        android:text="TESTE SAT"
+        android:textColor="@color/white"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAssociar2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

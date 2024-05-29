@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:context=".SegundoDisplay.Segundo_Display">
+
+    <Button
+        android:id="@+id/btn_startC"
+        android:layout_width="272dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/azulGertec"
+        android:text="Começar Carousel"
+        android:textColor="@color/white"
+        app:cornerRadius="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/carrossel" />
+
+    <TextView
+        android:id="@+id/carrossel"
+        android:layout_width="181dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="104dp"
+        android:text="Carousel"
+        android:textAlignment="center"
+        android:textColor="@color/azulGertec"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:cornerRadius="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_stopC"
+        android:layout_width="272dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/azulGertec"
+        android:text="Parar Carousel"
+        app:cornerRadius="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_startC"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button_clear"
+        android:layout_width="272dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/azulGertec"
+        android:text="Limpar Display"
+        app:cornerRadius="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_stopC"
+        tools:ignore="HardcodedText" />
+
+    <FrameLayout
+        android:id="@+id/widgetContainer"
+        android:layout_width="321dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="16dp"
+        android:background="@drawable/shape_list"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.855"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/espelhamento"
+        app:layout_constraintVertical_bias="0.076">
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/btnMirrorWidget"
+        android:layout_width="272dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/azulGertec"
+        android:text="Espelhar"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.826"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/widgetContainer" />
+
+    <TextView
+        android:id="@+id/espelhamento"
+        android:layout_width="150dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="188dp"
+        android:text="Espelhamento"
+        android:textAlignment="center"
+        android:textColor="@color/azulGertec"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UnknownId" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

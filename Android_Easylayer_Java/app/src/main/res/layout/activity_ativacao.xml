@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="4dp"
+    android:background="@color/white"
+    tools:context=".Sat.Ativacao">
+
+    <TextView
+        android:id="@+id/title_ativar"
+        android:layout_width="674dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="ATIVAR ASSINATURA"
+        android:textAlignment="center"
+        android:textColor="@color/azulGertec"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="CNPJ Contribuinte"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_ativar" />
+
+    <Button
+        android:id="@+id/buttonAtivar"
+        android:layout_width="219dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/azulGertec"
+        android:text="Ativar"
+        android:textColor="@color/white"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtConfCodAtivacao"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/txtConfCodAtivacao"
+        android:layout_width="248dp"
+        android:layout_height="35dp"
+        android:background="@drawable/shape_list"
+        android:layout_marginTop="8dp"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"></EditText>
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:text="Assinatura AC"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCodAtivacao" />
+
+    <EditText
+        android:id="@+id/txtCodAtivacao"
+        android:layout_width="248dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/shape_list"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8">
+
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="CNPJ Software House"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCNPJ" />
+
+    <EditText
+        android:id="@+id/txtCNPJ"
+        android:layout_width="248dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/shape_list"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7">
+
+    </EditText>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

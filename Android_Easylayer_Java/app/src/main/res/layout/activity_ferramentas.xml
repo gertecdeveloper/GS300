@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="4dp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".Sat.Ferramentas">
+
+
+    <TextView
+        android:id="@+id/title_func"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="OUTRAS FUNÇÕES"
+        android:textAlignment="center"
+        android:textColor="@color/azulGertec"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/buttonVersao"
+        android:layout_width="335dp"
+        android:layout_height="65dp"
+        android:backgroundTint="@color/azulGertec"
+        android:text="VERIFICAR VERSÃO"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAtualizar" />
+
+    <Button
+        android:id="@+id/buttonDesbloquear"
+        android:layout_width="335dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="@color/azulGertec"
+        android:text="DESBLOQUEAR SAT"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCodAtivacao" />
+
+    <Button
+        android:id="@+id/buttonAtualizar"
+        android:layout_width="335dp"
+        android:layout_height="65dp"
+        android:backgroundTint="@color/azulGertec"
+        android:text="ATUALIZAR SOFTWARE"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLog" />
+
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Código de Ativação SAT: "
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/title_func"
+        tools:ignore="HardcodedText,MissingConstraints,RtlHardcoded"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <EditText
+        android:id="@+id/txtCodAtivacao"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:autofillHints=""
+        android:background="@drawable/shape_list"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/title_func"
+    app:layout_constraintStart_toEndOf="@+id/textView25"/>
+
+    <Button
+        android:id="@+id/buttonLog"
+        android:layout_width="335dp"
+        android:layout_height="65dp"
+        android:backgroundTint="@color/azulGertec"
+        android:text="EXTRAIR LOG"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonBloquear">
+
+    </Button>
+
+    <Button
+        android:id="@+id/buttonBloquear"
+        android:layout_width="335dp"
+        android:layout_height="65dp"
+        android:backgroundTint="@color/azulGertec"
+        android:text="BLOQUEAR SAT"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonDesbloquear" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

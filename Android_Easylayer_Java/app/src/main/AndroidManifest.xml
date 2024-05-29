@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.easylayer_110_gs300" >
+
+    <uses-permission android:name="android.permission.NFC" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.EasyLayer_110_GS300"
+        tools:node="replace"
+        tools:targetApi="31" >
+        <activity
+            android:name=".NFC.NFC"
+            android:exported="true" />
+         <activity android:name=".Balanca.Balanca"/>
+        <activity android:name=".MSitef.Tef" />
+        <activity android:name=".Sat.Ferramentas" />
+        <activity android:name=".Sat.Ativacao" />
+        <activity android:name=".Sat.Associar" />
+        <activity android:name=".Sat.Alterar" />
+        <activity android:name=".Sat.MenuSat" />
+        <activity android:name=".Sat.Rede" />
+        <activity android:name=".Sat.Teste" />
+        <activity android:name=".Fala.FalaActivity" />
+        <activity android:name=".SegundoDisplay.Segundo_Display" />
+        <activity android:name=".Impressora.Impressora" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
