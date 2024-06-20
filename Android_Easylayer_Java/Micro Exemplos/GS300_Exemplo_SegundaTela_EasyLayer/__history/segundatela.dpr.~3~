@@ -1,0 +1,15 @@
+program segundatela;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  mainSegundaTela in 'mainSegundaTela.pas' {Form1},
+  segundodisplay in 'Libs\segundodisplay.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/05/09 16:40:20.000.765,=C:\Users\almelo\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/05/09 16:41:46.000.533,C:\Users\almelo\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas=D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\mainSegundaTela.pas</Transaction>
+    <Transaction>2024/05/09 16:41:46.000.533,C:\Users\almelo\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.fmx=D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\mainSegundaTela.fmx</Transaction>
+    <Transaction>2024/05/09 16:41:56.000.241,C:\Users\almelo\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj=D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\segundatela.dproj</Transaction>
+    <Transaction>2024/05/09 16:42:56.000.899,=D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.jar</Transaction>
+    <Transaction>2024/05/09 16:42:56.000.826,=D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\JavaInterfaces.pas</Transaction>
+    <Transaction>2024/05/10 09:10:13.000.446,=D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.pas</Transaction>
+    <Transaction>2024/05/10 09:11:15.000.750,D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\JavaInterfaces.pas=</Transaction>
+    <Transaction>2024/05/10 09:40:42.000.339,D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.jar=</Transaction>
+    <Transaction>2024/05/10 09:40:53.000.430,D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.pas=</Transaction>
+    <Transaction>2024/05/10 09:41:05.000.359,=D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.jar</Transaction>
+    <Transaction>2024/05/10 09:41:05.000.332,=D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.pas</Transaction>
+    <Transaction>2024/05/10 10:12:10.000.994,D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.jar=</Transaction>
+    <Transaction>2024/05/10 10:12:34.000.256,D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.pas=</Transaction>
+    <Transaction>2024/05/10 10:13:00.000.977,=D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.jar</Transaction>
+    <Transaction>2024/05/10 10:13:01.000.006,=D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.pas</Transaction>
+    <Transaction>2024/05/10 10:37:36.000.803,D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.pas=</Transaction>
+    <Transaction>2024/05/10 10:37:50.000.788,D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.jar=</Transaction>
+    <Transaction>2024/05/10 10:38:23.000.086,=D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.jar</Transaction>
+    <Transaction>2024/05/10 10:38:23.000.060,=D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.pas</Transaction>
+    <Transaction>2024/05/10 14:03:38.000.605,D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.jar=</Transaction>
+    <Transaction>2024/05/10 14:03:45.000.590,D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.pas=</Transaction>
+    <Transaction>2024/05/10 14:03:55.000.850,=D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.pas</Transaction>
+    <Transaction>2024/05/10 14:03:55.000.819,=D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.jar</Transaction>
+    <Transaction>2024/05/10 14:56:40.000.633,D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.pas=</Transaction>
+    <Transaction>2024/05/10 14:56:45.000.154,D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.jar=</Transaction>
+    <Transaction>2024/05/10 14:56:52.000.980,=D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.jar</Transaction>
+    <Transaction>2024/05/10 14:56:53.000.010,=D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.pas</Transaction>
+    <Transaction>2024/05/13 17:25:38.000.073,D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.pas=</Transaction>
+    <Transaction>2024/05/13 17:25:48.000.570,D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.jar=</Transaction>
+    <Transaction>2024/05/13 17:25:58.000.213,=D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundoDisplay.pas</Transaction>
+    <Transaction>2024/05/13 17:25:58.000.256,=D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.jar</Transaction>
+    <Transaction>2024/05/14 11:43:37.000.220,=D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Android\Debug\segundatela\assets\image1.jpeg</Transaction>
+    <Transaction>2024/05/28 10:58:04.000.457,=D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\Easy_Layer_GS300_2_1_4.aar</Transaction>
+    <Transaction>2024/06/05 13:58:07.000.173,D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\Easy_Layer_GS300_2_1_4.aar=</Transaction>
+    <Transaction>2024/06/05 14:11:14.000.489,D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundoDisplay.pas=</Transaction>
+    <Transaction>2024/06/05 14:11:25.000.960,D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.jar=</Transaction>
+    <Transaction>2024/06/05 14:13:48.000.193,=D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\Easy_Layer_GS300_2_0_0.jar</Transaction>
+    <Transaction>2024/06/05 14:13:48.000.286,=D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.jar</Transaction>
+    <Transaction>2024/06/05 14:13:48.000.353,=D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.pas</Transaction>
+    <Transaction>2024/06/05 14:16:44.000.718,D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.pas=</Transaction>
+    <Transaction>2024/06/05 14:16:50.000.461,=D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.pas</Transaction>
+    <Transaction>2024/06/06 11:26:04.000.975,=D:\01 - PROJETOS\GS300\DELPHI\SegundaTela\assets\image1.jpeg</Transaction>
+    <Transaction>2024/06/13 10:29:59.000.637,D:\01-PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.jar=</Transaction>
+    <Transaction>2024/06/13 10:30:07.000.176,D:\01-PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.pas=</Transaction>
+    <Transaction>2024/06/13 10:30:21.000.216,=D:\01-PROJETOS\GS300\DELPHI\backup\DELPHI - SegundaTela\SegundaTela\Libs\EasyLayerGS300_release.jar</Transaction>
+    <Transaction>2024/06/13 10:30:21.000.269,=D:\01-PROJETOS\GS300\DELPHI\backup\DELPHI - SegundaTela\SegundaTela\Libs\segundodisplay.jar</Transaction>
+    <Transaction>2024/06/13 10:30:21.000.300,=D:\01-PROJETOS\GS300\DELPHI\backup\DELPHI - SegundaTela\SegundaTela\Libs\segundoDisplay.pas</Transaction>
+    <Transaction>2024/06/13 10:30:34.000.444,=D:\01-PROJETOS\GS300\DELPHI\backup\DELPHI - SegundaTela\SegundaTela\assets\image3.jpeg</Transaction>
+    <Transaction>2024/06/13 10:30:34.000.533,=D:\01-PROJETOS\GS300\DELPHI\backup\DELPHI - SegundaTela\SegundaTela\assets\image1.jpeg</Transaction>
+    <Transaction>2024/06/13 10:30:34.000.499,=D:\01-PROJETOS\GS300\DELPHI\backup\DELPHI - SegundaTela\SegundaTela\assets\image4.jpeg</Transaction>
+    <Transaction>2024/06/13 10:30:34.000.410,=D:\01-PROJETOS\GS300\DELPHI\backup\DELPHI - SegundaTela\SegundaTela\assets\image2.jpeg</Transaction>
+    <Transaction>2024/06/13 10:34:55.000.342,D:\01-PROJETOS\GS300\DELPHI\backup\DELPHI - SegundaTela\SegundaTela\Libs\segundoDisplay.pas=</Transaction>
+    <Transaction>2024/06/13 10:35:05.000.227,D:\01-PROJETOS\GS300\DELPHI\backup\DELPHI - SegundaTela\SegundaTela\assets\image4.jpeg=</Transaction>
+    <Transaction>2024/06/13 10:35:05.000.220,D:\01-PROJETOS\GS300\DELPHI\backup\DELPHI - SegundaTela\SegundaTela\assets\image3.jpeg=</Transaction>
+    <Transaction>2024/06/13 10:35:05.000.210,D:\01-PROJETOS\GS300\DELPHI\backup\DELPHI - SegundaTela\SegundaTela\assets\image2.jpeg=</Transaction>
+    <Transaction>2024/06/13 10:35:05.000.198,D:\01-PROJETOS\GS300\DELPHI\backup\DELPHI - SegundaTela\SegundaTela\assets\image1.jpeg=</Transaction>
+    <Transaction>2024/06/13 10:35:16.000.456,D:\01-PROJETOS\GS300\DELPHI\backup\DELPHI - SegundaTela\SegundaTela\Libs\EasyLayerGS300_release.jar=</Transaction>
+    <Transaction>2024/06/13 10:35:16.000.460,D:\01-PROJETOS\GS300\DELPHI\backup\DELPHI - SegundaTela\SegundaTela\Libs\segundodisplay.jar=</Transaction>
+    <Transaction>2024/06/13 10:35:28.000.953,=D:\01-PROJETOS\GS300\DELPHI\SegundaTela\Libs\EasyLayerGS300_release.jar</Transaction>
+    <Transaction>2024/06/13 10:35:29.000.032,=D:\01-PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.pas</Transaction>
+    <Transaction>2024/06/13 10:35:29.000.003,=D:\01-PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.jar</Transaction>
+    <Transaction>2024/06/13 10:36:04.000.652,=D:\01-PROJETOS\GS300\DELPHI\SegundaTela\assets\image3.jpeg</Transaction>
+    <Transaction>2024/06/13 10:36:04.000.703,=D:\01-PROJETOS\GS300\DELPHI\SegundaTela\assets\image4.jpeg</Transaction>
+    <Transaction>2024/06/13 10:36:04.000.614,=D:\01-PROJETOS\GS300\DELPHI\SegundaTela\assets\image2.jpeg</Transaction>
+    <Transaction>2024/06/13 14:26:08.000.589,D:\01-PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.pas=</Transaction>
+    <Transaction>2024/06/13 14:26:15.000.541,=D:\01-PROJETOS\GS300\DELPHI\SegundaTela\Libs\segundodisplay.pas</Transaction>
+    <Transaction>2024/06/13 17:06:04.000.226,=D:\01-PROJETOS\GS300\DELPHI\SegundaTela\Libs\scanner.jar</Transaction>
+    <Transaction>2024/06/13 17:06:04.000.124,=D:\01-PROJETOS\GS300\DELPHI\SegundaTela\Libs\scanner.pas</Transaction>
+    <Transaction>2024/06/14 11:49:28.000.515,=D:\01-PROJETOS\GS300\DELPHI\SegundaTela\Libs\EasylayerPlugin.pas</Transaction>
+    <Transaction>2024/06/14 11:49:28.000.479,=D:\01-PROJETOS\GS300\DELPHI\SegundaTela\Libs\EasylayerPlugin.jar</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile Android64="" Android="400017236300175"/>
+	</ActiveMobileDevice>
+</BorlandProject>

@@ -1,0 +1,4 @@
+.\assets\internal\image1.jpeg
+.\assets\internal\image3.jpeg
+.\assets\internal\image2.jpeg
+.\assets\internal\image4.jpeg

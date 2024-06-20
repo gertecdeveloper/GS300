@@ -1,0 +1,14 @@
+program Exemplo_SubLcd;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  mainSubLcd in 'mainSubLcd.pas' {Form1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

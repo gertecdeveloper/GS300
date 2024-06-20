@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/06/17 13:21:25.000.960,=C:\Users\almelo\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/06/17 13:36:14.000.573,C:\Users\almelo\OneDrive\Documentos\Embarcadero\Studio\Projects\mainSubLcd.fmx=C:\Users\almelo\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.fmx</Transaction>
+    <Transaction>2024/06/17 13:36:14.000.573,C:\Users\almelo\OneDrive\Documentos\Embarcadero\Studio\Projects\mainSubLcd.pas=C:\Users\almelo\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/06/17 13:36:31.000.860,C:\Users\almelo\OneDrive\Documentos\Embarcadero\Studio\Projects\Exemplo_SubLcd.dproj=C:\Users\almelo\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2024/06/17 13:38:58.000.888,=D:\01-PROJETOS\GS300\DELPHI\GS300_Exemplo_LCD_SDK\assets\image1.jpeg</Transaction>
+    <Transaction>2024/06/17 13:38:58.000.995,=D:\01-PROJETOS\GS300\DELPHI\GS300_Exemplo_LCD_SDK\assets\image4.jpeg</Transaction>
+    <Transaction>2024/06/17 13:38:58.000.943,=D:\01-PROJETOS\GS300\DELPHI\GS300_Exemplo_LCD_SDK\assets\image3.jpeg</Transaction>
+    <Transaction>2024/06/17 13:38:58.000.914,=D:\01-PROJETOS\GS300\DELPHI\GS300_Exemplo_LCD_SDK\assets\image2.jpeg</Transaction>
+    <Transaction>2024/06/17 13:39:07.000.622,=D:\01-PROJETOS\GS300\DELPHI\GS300_Exemplo_LCD_SDK\Libs\SdkPlugin.pas</Transaction>
+    <Transaction>2024/06/17 13:39:07.000.708,=D:\01-PROJETOS\GS300\DELPHI\GS300_Exemplo_LCD_SDK\Libs\SdkPlugin.jar</Transaction>
+    <Transaction>2024/06/17 13:39:54.000.067,=D:\01-PROJETOS\GS300\DELPHI\GS300_Exemplo_LCD_SDK\Libs\GS300_APlibrary.jar</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile Android64="" Android="400017236300175"/>
+	</ActiveMobileDevice>
+</BorlandProject>

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Libs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Libs/EasyLayerGS300_release.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Libs/segundodisplay.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

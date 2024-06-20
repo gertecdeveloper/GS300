@@ -1,0 +1,18 @@
+program segundatela;
+
+{$R *.dres}
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  mainSegundaTela in 'mainSegundaTela.pas' {Form1},
+  segundodisplay in 'Libs\segundodisplay.pas',
+  scanner in 'Libs\scanner.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

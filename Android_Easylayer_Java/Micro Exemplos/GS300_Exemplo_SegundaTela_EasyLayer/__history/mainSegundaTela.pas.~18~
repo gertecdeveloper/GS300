@@ -1,0 +1,91 @@
+unit mainSegundaTela;
+
+interface
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, System.Generics.Collections,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, segundodisplay,
+  FMX.Controls.Presentation, FMX.StdCtrls, Androidapi.Jni.App, FMX.Helpers.Android, FMX.MediaLibrary,
+  Androidapi.Jni.GraphicsContentViewText, Androidapi.Jni.JavaTypes, Androidapi.Jni.Net, Androidapi.Helpers,
+  fmx.surfaces, Androidapi.JNIBridge, System.IOUtils, FMX.Objects;
+type
+  TForm1 = class(TForm)
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    StyleBook1: TStyleBook;
+    procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+
+  public
+    lcd: JSegundoDisplay;
+  end;
+var
+  Form1: TForm1;
+implementation
+{$R *.fmx}
+
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+  ImagePaths: array[0..3] of string;
+  Bitmap: TBitmap;
+  ImageStream: TMemoryStream;
+  JavaArray: TJavaArray<Byte>;
+  I, J: Integer;
+  ImageBitmap: JBitmap;
+  JavaArrayList: JArrayList;
+  LcdReturn: Boolean;
+begin
+  // Caminhos das imagens
+  ImagePaths[0] := TPath.Combine(TPath.GetDocumentsPath, 'image1.jpeg');
+  ImagePaths[1] := TPath.Combine(TPath.GetDocumentsPath, 'image2.jpeg');
+  ImagePaths[2] := TPath.Combine(TPath.GetDocumentsPath, 'image3.jpeg');
+  ImagePaths[3] := TPath.Combine(TPath.GetDocumentsPath, 'image4.jpeg');
+  Bitmap := TBitmap.Create;
+  ImageStream := TMemoryStream.Create;
+  JavaArrayList := TJArrayList.Create;
+  try
+    for J := Low(ImagePaths) to High(ImagePaths) do
+    begin
+      Bitmap.LoadFromFile(ImagePaths[J]);
+      ImageStream.Clear;
+      Bitmap.SaveToStream(ImageStream);
+      // Criando um TJavaArray<Byte> com o mesmo tamanho do TMemoryStream
+      JavaArray := TJavaArray<Byte>.Create(ImageStream.Size);
+      // Copiando os dados do TMemoryStream para o TJavaArray<Byte>
+      ImageStream.Position := 0;
+      for I := 0 to ImageStream.Size - 1 do
+      begin
+        JavaArray[I] := PByte(ImageStream.Memory)[I];
+      end;
+      // Decodificando TJavaArray<Byte> em JBitmap
+      ImageBitmap := TJBitmapFactory.JavaClass.decodeByteArray(JavaArray, 0, JavaArray.Length);
+      // Adicionando o JBitmap ao JArrayList
+      JavaArrayList.add(ImageBitmap);
+      // Liberando memória do JavaArray
+      JavaArray.Free;
+    end;
+    // Chamando o método startCarrossel com a lista de bitmaps
+    LcdReturn := lcd.startCarrossel(JavaArrayList);
+    ShowMessage('Start: ' + BoolToStr(LcdReturn, true));
+  finally
+    Bitmap.Free;
+    ImageStream.Free;
+  end;
+end;
+
+
+
+procedure TForm1.FormCreate(Sender: TObject);
+var
+     LcdReturn: Boolean;
+begin
+  // Inicialização necessária na criação do formulário
+    lcd:=  TJSegundoDisplay.JavaClass.init;
+    LcdReturn:= lcd.instanciaLcd(TAndroidHelper.Activity);
+    ShowMessage('Instanciando LCD: ' + BoolToStr(LcdReturn, true));
+
+end;
+
+end.

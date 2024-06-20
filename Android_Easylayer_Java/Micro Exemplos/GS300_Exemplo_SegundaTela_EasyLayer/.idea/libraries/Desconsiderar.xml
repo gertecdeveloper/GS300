@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Desconsiderar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Libs/Desconsiderar/Easy_Layer_GS300_2_0_0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Libs/Desconsiderar/segundodisplay.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

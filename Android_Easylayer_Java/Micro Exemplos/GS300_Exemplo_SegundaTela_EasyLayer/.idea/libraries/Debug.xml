@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Debug">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Android/Debug/EasyLayerGS300_release-dexed.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Android/Debug/Easy_Layer_GS300_2_0_0-dexed.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Android/Debug/segundodisplay-dexed.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
