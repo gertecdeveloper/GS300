@@ -86,246 +86,246 @@ public class SubLcd extends AppCompatActivity implements SubLcdHelper.VuleCalBac
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    SubImages();
-                    }
-                    });
+                SubImages();
+            }
+        });
 
-                    btnStop.setOnClickListener(new View.OnClickListener() {
+        btnStop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                    String text = "GS300 Terminal PDV";
-                    try {
+                String text = "GS300 Terminal PDV";
+                try {
                     //TextToFala.getInstance(getApplicationContext()).speechText(text);
-                    }catch (Exception e) {
+                } catch (Exception e) {
                     txtResultado.setText(e.toString());
-                    }
+                }
 
-                    try {
-                    SubLcdHelper.getInstance().sendText(text, Layout.Alignment.ALIGN_NORMAL,60);
+                try {
+                    SubLcdHelper.getInstance().sendText(text, Layout.Alignment.ALIGN_NORMAL, 60);
                     cmdflag = CMD_PROTOCOL_BMP_DISPLAY;
                     mHandler.sendEmptyMessageDelayed(MSG_REFRESH_NO_SHOWRESULT, 300);
-                    } catch (SubLcdException e) {
+                } catch (SubLcdException e) {
                     e.printStackTrace();
-                    }
-                    }
-                    });
+                }
+            }
+        });
 
-                    btnLigarLed.setOnClickListener(new View.OnClickListener() {
+        btnLigarLed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                    AsyncTask.execute(new Runnable() {
-            @Override
-            public void run() {
-                    try {
-                    SubLcdHelper.getInstance().sendScan();
-                    cmdflag = CMD_PROTOCOL_START_SCAN;
-                    mHandler.sendEmptyMessageDelayed(MSG_REFRESH_SHOWRESULT, 300);
-                    } catch (SubLcdException e) {
-                    SubLcdHelper.getInstance().release();
+                AsyncTask.execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            SubLcdHelper.getInstance().sendScan();
+                            cmdflag = CMD_PROTOCOL_START_SCAN;
+                            mHandler.sendEmptyMessageDelayed(MSG_REFRESH_SHOWRESULT, 300);
+                        } catch (SubLcdException e) {
+                            SubLcdHelper.getInstance().release();
+                            e.printStackTrace();
+                        }
+                    }
+                });
+            }
+        });
+
+
+    }
+
+
+    @Override
+    public void datatrigger(String s, int cmd) {
+        runOnUiThread(() -> {
+            if (!TextUtils.isEmpty(s)) {
+                if (cmd == cmdflag) {
+                    if (cmd == CMD_PROTOCOL_UPDATE && s.equals(" data is incorrect")) {
+                        closeLoading();
+                        mHandler.removeMessages(MSG_REFRESH_SHOWRESULT);
+                        mHandler.removeMessages(MSG_REFRESH_NO_SHOWRESULT);
+                        Log.i(TAG, "datatrigger result=" + s);
+                        Log.i(TAG, "datatrigger cmd=" + cmd);
+                        if (isShowResult) {
+                            //showtoast(getString(R.string.updatesuccessed));
+                        }
+                    } else if (cmd == CMD_PROTOCOL_UPDATE && (s.equals("updatalogo") || s.equals("updatafilenameok") || s.equals("updatauImage") || s.equals("updataok"))) {
+                        Log.i(TAG, "neglect");
+                    } else if (cmd == CMD_PROTOCOL_UPDATE && (s.equals("Same_version"))) {
+                        closeLoading();
+                        mHandler.removeMessages(MSG_REFRESH_SHOWRESULT);
+                        mHandler.removeMessages(MSG_REFRESH_NO_SHOWRESULT);
+                        Log.i(TAG, "datatrigger result=" + s);
+                        Log.i(TAG, "datatrigger cmd=" + cmd);
+                        if (isShowResult) {
+                            //showtoast(getString(R.string.same_version));
+                        }
+                    } else {
+                        mHandler.removeMessages(MSG_REFRESH_SHOWRESULT);
+                        mHandler.removeMessages(MSG_REFRESH_NO_SHOWRESULT);
+                        Log.i(TAG, "datatrigger result=" + s);
+                        Log.i(TAG, "datatrigger cmd=" + cmd);
+                        if (isShowResult) {
+                            showtoast(s);
+
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    private boolean hasPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            return checkSelfPermission(PERMISSION_READ_STORAGE) == PackageManager.PERMISSION_GRANTED &&
+                    checkSelfPermission(PERMISSION_WRITE_STORAGE) == PackageManager.PERMISSION_GRANTED;
+        } else {
+            return true;
+        }
+    }
+
+    private void requestPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            requestPermissions(Permission, PERMISSIONS_REQUEST);
+        }
+    }
+
+    private static final int MSG_REFRESH_SHOWRESULT = 0x11;
+    private static final int MSG_REFRESH_NO_SHOWRESULT = 0x12;
+    private static final int MSG_REFRESH_UPGRADING_SYSTEM = 0x13;
+    private Handler mHandler = new Handler(new Handler.Callback() {
+        @Override
+        public boolean handleMessage(Message msg) {
+            switch (msg.what) {
+                case MSG_REFRESH_SHOWRESULT:
+                    isShowResult = true;
+                    SubLcdHelper.getInstance().readData();
+                    mHandler.removeMessages(MSG_REFRESH_SHOWRESULT);
+                    mHandler.sendEmptyMessageDelayed(MSG_REFRESH_SHOWRESULT, 100);
+                    break;
+                case MSG_REFRESH_NO_SHOWRESULT:
+                    isShowResult = false;
+                    SubLcdHelper.getInstance().readData();
+                    mHandler.removeMessages(MSG_REFRESH_NO_SHOWRESULT);
+                    mHandler.sendEmptyMessageDelayed(MSG_REFRESH_NO_SHOWRESULT, 100);
+                    break;
+                case MSG_REFRESH_UPGRADING_SYSTEM:
+                    showLoading();
+                    mHandler.sendEmptyMessage(MSG_REFRESH_SHOWRESULT);
+                    break;
+            }
+            return false;
+        }
+    });
+
+    private void closeLoading() {
+        runOnUiThread(() -> {
+            //LoadingDialogUtil.getInstance().closeLoadingDialog();//Enable loading animation
+        });
+    }
+
+    private void showLoading() {
+        runOnUiThread(() -> {
+            //LoadingDialogUtil.getInstance().showLoadingDialog(MainActivity.this, "The secondary screen is being upgraded, please do not operate...");//Enable loading animation
+        });
+    }
+
+    private void showtoast(String s) {
+        runOnUiThread(() -> {
+            if (toast != null) {
+                toast.cancel();
+                toast = Toast.makeText(this, s, Toast.LENGTH_SHORT);
+                if (Objects.equals(s, "scandatatimeout")) {
+                    txtResultado.setText("Falha na leitura");
+                    TextToFala.getInstance(getApplicationContext()).speechText("Falha na leitura");
+                    toast = Toast.makeText(this, "Falha na leitura", Toast.LENGTH_SHORT);
+                } else {
+                    consulta.add(s);
+                    Collections.reverse(consulta);
+                    adapter.notifyDataSetChanged();
+                    TextToFala.getInstance(getApplicationContext()).speechText("Sucesso na leitura");
+                }
+
+                try {
+                    Bitmap bp = BitmapFactory.decodeResource(getResources(), R.drawable.gertec4);
+                    SubLcdHelper.getInstance().sendBitmap(SubLcdHelper.getInstance().doRotateBitmap(bp, 90));
+                } catch (SubLcdException e) {
                     e.printStackTrace();
-                    }
-                    }
-                    });
-                    }
-                    });
+                }
+                toast.show();
 
 
-        }
+            } else {
+                toast = Toast.makeText(this, s, Toast.LENGTH_SHORT);
+                if (Objects.equals(s, "scandatatimeout")) {
+                    txtResultado.setText("Falha na leitura");
+                    TextToFala.getInstance(getApplicationContext()).speechText("Falha na leitura");
+                    toast = Toast.makeText(this, "Falha na leitura", Toast.LENGTH_SHORT);
+                } else {
+                    consulta.add(s);
+                    Collections.reverse(consulta);
+                    adapter.notifyDataSetChanged();
+                    TextToFala.getInstance(getApplicationContext()).speechText("Sucesso na leitura");
+                }
+                try {
+                    Bitmap bp = BitmapFactory.decodeResource(getResources(), R.drawable.gertec4);
+                    SubLcdHelper.getInstance().sendBitmap(SubLcdHelper.getInstance().doRotateBitmap(bp, 90));
+                } catch (SubLcdException e) {
+                    e.printStackTrace();
+                }
+                toast.show();
+                flagtxt = "1";
 
-
-@Override
-public void datatrigger(String s, int cmd) {
-        runOnUiThread(() -> {
-        if (!TextUtils.isEmpty(s)) {
-        if (cmd == cmdflag) {
-        if (cmd == CMD_PROTOCOL_UPDATE && s.equals(" data is incorrect")) {
-        closeLoading();
-        mHandler.removeMessages(MSG_REFRESH_SHOWRESULT);
-        mHandler.removeMessages(MSG_REFRESH_NO_SHOWRESULT);
-        Log.i(TAG, "datatrigger result=" + s);
-        Log.i(TAG, "datatrigger cmd=" + cmd);
-        if (isShowResult) {
-        //showtoast(getString(R.string.updatesuccessed));
-        }
-        } else if (cmd == CMD_PROTOCOL_UPDATE && (s.equals("updatalogo") || s.equals("updatafilenameok") || s.equals("updatauImage") || s.equals("updataok"))) {
-        Log.i(TAG, "neglect");
-        } else if (cmd == CMD_PROTOCOL_UPDATE && (s.equals("Same_version"))) {
-        closeLoading();
-        mHandler.removeMessages(MSG_REFRESH_SHOWRESULT);
-        mHandler.removeMessages(MSG_REFRESH_NO_SHOWRESULT);
-        Log.i(TAG, "datatrigger result=" + s);
-        Log.i(TAG, "datatrigger cmd=" + cmd);
-        if (isShowResult) {
-        //showtoast(getString(R.string.same_version));
-        }
-        } else {
-        mHandler.removeMessages(MSG_REFRESH_SHOWRESULT);
-        mHandler.removeMessages(MSG_REFRESH_NO_SHOWRESULT);
-        Log.i(TAG, "datatrigger result=" + s);
-        Log.i(TAG, "datatrigger cmd=" + cmd);
-        if (isShowResult) {
-        showtoast(s);
-
-        }
-        }
-        }
-        }
+            }
         });
-        }
+    }
 
-private boolean hasPermission() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-        return checkSelfPermission(PERMISSION_READ_STORAGE) == PackageManager.PERMISSION_GRANTED &&
-        checkSelfPermission(PERMISSION_WRITE_STORAGE) == PackageManager.PERMISSION_GRANTED;
-        } else {
-        return true;
-        }
-        }
-
-private void requestPermission() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-        requestPermissions(Permission, PERMISSIONS_REQUEST);
-        }
-        }
-
-private static final int MSG_REFRESH_SHOWRESULT = 0x11;
-private static final int MSG_REFRESH_NO_SHOWRESULT = 0x12;
-private static final int MSG_REFRESH_UPGRADING_SYSTEM = 0x13;
-private Handler mHandler = new Handler(new Handler.Callback() {
-@Override
-public boolean handleMessage(Message msg) {
-        switch (msg.what) {
-        case MSG_REFRESH_SHOWRESULT:
-        isShowResult = true;
-        SubLcdHelper.getInstance().readData();
-        mHandler.removeMessages(MSG_REFRESH_SHOWRESULT);
-        mHandler.sendEmptyMessageDelayed(MSG_REFRESH_SHOWRESULT, 100);
-        break;
-        case MSG_REFRESH_NO_SHOWRESULT:
-        isShowResult = false;
-        SubLcdHelper.getInstance().readData();
-        mHandler.removeMessages(MSG_REFRESH_NO_SHOWRESULT);
-        mHandler.sendEmptyMessageDelayed(MSG_REFRESH_NO_SHOWRESULT, 100);
-        break;
-        case MSG_REFRESH_UPGRADING_SYSTEM:
-        showLoading();
-        mHandler.sendEmptyMessage(MSG_REFRESH_SHOWRESULT);
-        break;
-        }
-        return false;
-        }
-        });
-
-private void closeLoading() {
-        runOnUiThread(() -> {
-        //LoadingDialogUtil.getInstance().closeLoadingDialog();//Enable loading animation
-        });
-        }
-
-private void showLoading() {
-        runOnUiThread(() -> {
-        //LoadingDialogUtil.getInstance().showLoadingDialog(MainActivity.this, "The secondary screen is being upgraded, please do not operate...");//Enable loading animation
-        });
-        }
-
-private void showtoast(String s) {
-        runOnUiThread(() -> {
-        if (toast != null) {
-        toast.cancel();
-        toast = Toast.makeText(this, s, Toast.LENGTH_SHORT);
-        if (Objects.equals(s, "scandatatimeout")){
-        txtResultado.setText("Falha na leitura");
-        TextToFala.getInstance(getApplicationContext()).speechText("Falha na leitura");
-        toast = Toast.makeText(this, "Falha na leitura", Toast.LENGTH_SHORT);
-        }else {
-        consulta.add(s);
-        Collections.reverse(consulta);
-        adapter.notifyDataSetChanged();
-        TextToFala.getInstance(getApplicationContext()).speechText("Sucesso na leitura");
-        }
-
-        try {
-        Bitmap bp = BitmapFactory.decodeResource(getResources(), R.drawable.gertec4);
-        SubLcdHelper.getInstance().sendBitmap(SubLcdHelper.getInstance().doRotateBitmap(bp, 90));
-        } catch (SubLcdException e) {
-        e.printStackTrace();
-        }
-        toast.show();
-
-
-        } else {
-        toast = Toast.makeText(this, s, Toast.LENGTH_SHORT);
-        if (Objects.equals(s, "scandatatimeout")){
-        txtResultado.setText("Falha na leitura");
-        TextToFala.getInstance(getApplicationContext()).speechText("Falha na leitura");
-        toast = Toast.makeText(this, "Falha na leitura", Toast.LENGTH_SHORT);
-        }else {
-        consulta.add(s);
-        Collections.reverse(consulta);
-        adapter.notifyDataSetChanged();
-        TextToFala.getInstance(getApplicationContext()).speechText("Sucesso na leitura");
-        }
-        try {
-        Bitmap bp = BitmapFactory.decodeResource(getResources(), R.drawable.gertec4);
-        SubLcdHelper.getInstance().sendBitmap(SubLcdHelper.getInstance().doRotateBitmap(bp, 90));
-        } catch (SubLcdException e) {
-        e.printStackTrace();
-        }
-        toast.show();
-        flagtxt = "1";
-
-        }
-        });
-        }
-
-//Função para envio de uma sequência de imagens para o segundo display
-public void SubImages(){
+    //Função para envio de uma sequência de imagens para o segundo display
+    public void SubImages() {
         Bitmap bp = BitmapFactory.decodeResource(getResources(), R.drawable.gertec4);
         Bitmap bpp = BitmapFactory.decodeResource(getResources(), R.drawable.valor4);
         Bitmap bpb = BitmapFactory.decodeResource(getResources(), R.drawable.pix8);
         Bitmap bpbp = BitmapFactory.decodeResource(getResources(), R.drawable.gertec3);
         handler.postDelayed(new Runnable() {
-@Override
-public void run() {
-        try {
-        SubLcdHelper.getInstance().sendBitmap(SubLcdHelper.getInstance().doRotateBitmap(bpb, 90));
-        } catch (SubLcdException e) {
-        e.printStackTrace();
-        }
-        }
+            @Override
+            public void run() {
+                try {
+                    SubLcdHelper.getInstance().sendBitmap(SubLcdHelper.getInstance().doRotateBitmap(bpb, 90));
+                } catch (SubLcdException e) {
+                    e.printStackTrace();
+                }
+            }
         }, 2000);
         handler1.postDelayed(new Runnable() {
-@Override
-public void run() {
-        try {
-        SubLcdHelper.getInstance().sendBitmap(SubLcdHelper.getInstance().doRotateBitmap(bpp, 90));
-        } catch (SubLcdException e) {
-        e.printStackTrace();
-        }
-        }
+            @Override
+            public void run() {
+                try {
+                    SubLcdHelper.getInstance().sendBitmap(SubLcdHelper.getInstance().doRotateBitmap(bpp, 90));
+                } catch (SubLcdException e) {
+                    e.printStackTrace();
+                }
+            }
         }, 4000);
         handler2.postDelayed(new Runnable() {
-@Override
-public void run() {
-        try {
-        SubLcdHelper.getInstance().sendBitmap(SubLcdHelper.getInstance().doRotateBitmap(bpbp, 90));
-        } catch (SubLcdException e) {
-        e.printStackTrace();
-        }
-        }
+            @Override
+            public void run() {
+                try {
+                    SubLcdHelper.getInstance().sendBitmap(SubLcdHelper.getInstance().doRotateBitmap(bpbp, 90));
+                } catch (SubLcdException e) {
+                    e.printStackTrace();
+                }
+            }
         }, 6000);
         handler3.postDelayed(new Runnable() {
-@Override
-public void run() {
-        try {
-        SubLcdHelper.getInstance().sendBitmap(SubLcdHelper.getInstance().doRotateBitmap(bp, 90));
-        } catch (SubLcdException e) {
-        e.printStackTrace();
-        }
-        }
+            @Override
+            public void run() {
+                try {
+                    SubLcdHelper.getInstance().sendBitmap(SubLcdHelper.getInstance().doRotateBitmap(bp, 90));
+                } catch (SubLcdException e) {
+                    e.printStackTrace();
+                }
+            }
         }, 9000);
-        }
+    }
 
 }
