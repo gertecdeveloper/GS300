@@ -1,32 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.gs300_pdv_java">
+    xmlns:tools="http://schemas.android.com/tools">
+
     <uses-permission android:name="android.permission.NFC" />
+
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="true" />
+
     <application
         android:allowBackup="true"
-        tools:node="replace"
-        android:exported="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.GS300_PDV_JAVA"
+        android:theme="@style/Theme.ExemploGS300_Java"
         tools:targetApi="31">
-        <activity android:name=".msitef.Tef"/>
-        <activity android:name=".sat.Ferramentas"/>
-        <activity android:name=".sat.Teste"/>
-        <activity android:name=".sat.Rede"/>
-        <activity android:name=".sat.Associar"/>
-        <activity android:name=".sat.Alterar"/>
-        <activity android:name=".sat.Ativacao"/>
-        <activity android:name=".sat.MenuSat"/>
-        <activity android:name=".impressora.Impressora"/>
-        <activity android:name=".sublcd.SubLcd"/>
-        <activity android:name=".nfc.NfcExemplo"/>
-        <activity android:name=".fala.FalaActivity"/>
+        <activity
+            android:name=".nfc.MifareActivity"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.nfc.action.TECH_DISCOVERED" />
+            </intent-filter>
+            <meta-data
+                android:name="android.nfc.action.TECH_DISCOVERED"
+                android:resource="@xml/nfc_tech_filter" />
+        </activity>
+
+        <activity
+            android:name=".sat.Sat"
+            android:exported="false" />
+        <activity
+            android:name=".tef.Tef"
+            android:exported="false" />
+        <activity
+            android:name=".fala.FalaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".display2.SegundoDisplayActivity"
+            android:exported="false" />
+        <activity
+            android:name=".balanca.Balanca"
+            android:exported="false" />
+        <activity
+            android:name=".impressora.Printer"
+            android:exported="false" />
+        <activity
+            android:name=".gaveta.Gaveta"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -35,9 +58,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
         </activity>
     </application>
 

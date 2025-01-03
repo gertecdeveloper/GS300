@@ -1,6 +1,12 @@
 pluginManagement {
     repositories {
-        google()
+        google {
+            content {
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
+            }
+        }
         mavenCentral()
         gradlePluginPortal()
     }
@@ -13,8 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "GS300_PDV_JAVA"
+rootProject.name = "ExemploGS300_Java"
 include ':app'
-include ':MSitef'
-include ':satfuncoes'
-include ':TextToSpeaks'

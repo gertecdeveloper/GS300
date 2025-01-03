@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
-    tools:context=".msitef.Tef"
-    android:background="@color/AzGertec">
+    tools:context=".tef.Tef"
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/textView"
@@ -15,13 +15,13 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="150dp"
+        android:fontFamily="@font/archivo_black"
         android:gravity="center|center_horizontal|center_vertical"
         android:text="Exemplo M-Sitef- Java"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:fontFamily="@font/archivo_black"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/azul2"
+        android:textSize="40sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/btnEnviarTransacao"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,36 +29,36 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="130dp"
-        android:layout_height="26dp"
+        android:layout_height="60dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="Valor em R$"
-        android:textSize="18sp"
+        android:textColor="@color/azul2"
+        android:textSize="25sp"
         android:textStyle="bold"
-        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="153dp"
-        android:layout_height="31dp"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
         android:layout_marginTop="16dp"
         android:text="IP Servidor\n(somente M-Sitef)"
         android:textAlignment="center"
-        android:textSize="12sp"
+        android:textColor="@color/azul2"
+        android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/txtValorOperacao"
         android:layout_width="102dp"
-        android:layout_height="41dp"
+        android:layout_height="60dp"
         android:layout_marginStart="16dp"
-        android:textColor="@color/white"
         android:inputType="numberDecimal|numberSigned"
+        android:textColor="@color/azul2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -80,7 +80,7 @@
             android:text="Pagamento a ser utilizado"
             android:textSize="14sp"
             android:textStyle="bold"
-            android:textColor="@color/white"/>
+            android:textColor="@color/azul2"/>
 
 
         <RadioButton
@@ -88,21 +88,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Crédito"
-            android:textColor="@color/white"/>
+            android:textColor="@color/azul2"/>
 
         <RadioButton
             android:id="@+id/rbDebito"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Débito"
-            android:textColor="@color/white"/>
+            android:textColor="@color/azul2"/>
 
         <RadioButton
             android:id="@+id/rbTodos"
             android:layout_width="134dp"
             android:layout_height="wrap_content"
             android:text="Todos(M-Sitef)"
-            android:textColor="@color/white"/>
+            android:textColor="@color/azul2"/>
 
 
     </RadioGroup>
@@ -110,11 +110,11 @@
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/txtIpServidor"
         android:layout_width="150dp"
-        android:layout_height="40dp"
+        android:layout_height="60dp"
         android:layout_marginStart="28dp"
         android:digits="0123456789."
         android:hint="192.168.15.9"
-        android:textColor="@color/white"
+        android:textColor="@color/azul2"
         app:layout_constraintStart_toEndOf="@+id/txtValorOperacao"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
         tools:text="192.168.123.105" />
@@ -139,21 +139,21 @@
             android:layout_marginTop="10dp"
             android:text="Tipo de parcelamento"
             android:textStyle="bold"
-            android:textColor="@color/white"/>
+            android:textColor="@color/azul2"/>
 
         <RadioButton
             android:id="@+id/radioLoja"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Parcelado Loja"
-            android:textColor="@color/white"/>
+            android:textColor="@color/azul2"/>
 
         <RadioButton
             android:id="@+id/radioAdm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Parcelado Adm"
-            android:textColor="@color/white"/>
+            android:textColor="@color/azul2"/>
 
     </RadioGroup>
 
@@ -163,9 +163,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="Número de Parcelas"
-        android:textSize="18sp"
+        android:textColor="@color/azul2"
+        android:textSize="25sp"
         android:textStyle="bold"
-        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroupParcelamento" />
 
@@ -177,7 +177,7 @@
         android:hint="0"
         android:inputType="number"
         android:text="1"
-        android:textColor="@color/white"
+        android:textColor="@color/azul2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
@@ -199,7 +199,7 @@
             android:text="Escolha a API: "
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="@color/white"
+            android:textColor="@color/azul2"
             tools:ignore="MissingConstraints" />
 
         <RadioButton
@@ -224,7 +224,7 @@
         android:layout_marginStart="16dp"
         android:text="Habilita Impressão"
         android:visibility="gone"
-        android:textColor="@color/white"
+        android:textColor="@color/azul2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -234,54 +234,66 @@
         android:id="@+id/btnEnviarTransacao"
         android:layout_width="383dp"
         android:layout_height="44dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="80dp"
+        android:background="@drawable/blue_bt"
         android:text="Enviar Transação"
+        android:textStyle="bold"
+        android:textSize="18dp"
         android:textAlignment="center"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/shadow"/>/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnCancelarTransacao"
         android:layout_width="383dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="80dp"
+        android:background="@drawable/blue_bt"
         android:text="Cancelar Transação"
+        android:textStyle="bold"
+        android:textSize="18dp"
         android:textAlignment="center"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEnviarTransacao"
-        android:background="@drawable/shadow"/>/>
+        app:layout_constraintTop_toBottomOf="@+id/btnEnviarTransacao" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnFuncoes"
         android:layout_width="383dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="80dp"
+        android:background="@drawable/blue_bt"
         android:text="Funções"
-        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="18dp"
         android:textAlignment="center"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCancelarTransacao"
-        android:background="@drawable/shadow"/>/>
+        app:layout_constraintTop_toBottomOf="@+id/btnCancelarTransacao" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnReimpressao"
         android:layout_width="383dp"
         android:layout_height="43dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="80dp"
+        android:background="@drawable/blue_bt"
         android:text="Reimpressão"
-        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="18dp"
         android:textAlignment="center"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnFuncoes"
-        android:background="@drawable/shadow"/>/>
+        app:layout_constraintTop_toBottomOf="@+id/btnFuncoes" />
 
     <EditText
         android:id="@+id/txtRetorno"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="828dp"
+        android:layout_height="440dp"
         android:layout_marginStart="115dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -301,8 +313,10 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/txtParcelas"
-        app:layout_constraintTop_toBottomOf="@+id/btnReimpressao" />
+        app:layout_constraintTop_toBottomOf="@+id/btnReimpressao"
+        app:layout_constraintVertical_bias="0.95" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

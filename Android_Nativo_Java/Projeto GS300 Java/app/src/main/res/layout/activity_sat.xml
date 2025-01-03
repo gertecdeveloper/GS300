@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".sat.Sat">
+
+    <TextView
+        android:id="@+id/libversion"
+        android:layout_width="407dp"
+        android:layout_height="23dp"
+        android:lineSpacingExtra="10sp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnConfigurarInterfaceDeRede"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:text="Configurar Interface de Rede"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        android:background="@drawable/blue_bt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.656" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnConsultarStatusOperacionalMFE"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:text="Consultar Status Operacional MFE"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/blue_bt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.745" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnAtualizarSAT"
+        android:layout_width="188dp"
+        android:layout_height="44dp"
+        android:text="Atualizar SAT"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        android:background="@drawable/blue_bt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.562" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnTesteFimAFim"
+        android:layout_width="188dp"
+        android:layout_height="44dp"
+        android:text="Teste Fim a Fim"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        android:background="@drawable/blue_bt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.297"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.562" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnExtrairLog"
+        android:layout_width="188dp"
+        android:layout_height="44dp"
+        android:text="Extrair Log"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        android:background="@drawable/blue_bt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.973"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.562" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnTrocarCodigoDeAtivacao"
+        android:layout_width="188dp"
+        android:layout_height="44dp"
+        android:text="Trocar Código de Ativação"
+        android:textAlignment="center"
+        android:textSize="11sp"
+        android:background="@drawable/blue_bt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.562" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnAtivarSAT"
+        android:layout_width="188dp"
+        android:layout_height="44dp"
+        android:text="Ativar SAT"
+        android:textAlignment="center"
+        android:textSize="12dp"
+        android:background="@drawable/blue_bt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.021"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.187" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnAssociarSAT"
+        android:layout_width="188dp"
+        android:layout_height="44dp"
+        android:text="Associar Assinatura"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        android:background="@drawable/blue_bt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.187" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnConsultaSAT"
+        android:layout_width="188dp"
+        android:layout_height="44dp"
+        android:text="Consultar SAT"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        android:background="@drawable/blue_bt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.297"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.187" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnConsultarStatusOperacional"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:text="Consultar Status Operacional"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        android:background="@drawable/blue_bt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.286" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnConsultarNumeroSessao"
+        android:layout_width="188dp"
+        android:layout_height="44dp"
+        android:text="Consultar Numero Sessão"
+        android:textAlignment="center"
+        android:textSize="11sp"
+        android:background="@drawable/blue_bt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.973"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.187" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnBloquearSAT"
+        android:layout_width="188dp"
+        android:layout_height="44dp"
+        android:text="Bloquear SAT"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        android:background="@drawable/blue_bt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.021"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.38" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnEnviarDadosVenda"
+        android:layout_width="188dp"
+        android:layout_height="44dp"
+        android:text="Enviar Dados de Venda"
+        android:textAlignment="center"
+        android:textSize="12dp"
+        android:background="@drawable/blue_bt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.297"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.38" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnCancelarUltimaVenda"
+        android:layout_width="188dp"
+        android:layout_height="44dp"
+        android:text="Cancelar Última Venda"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        android:background="@drawable/blue_bt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.973"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.38" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnDesbloquearSAT"
+        android:layout_width="188dp"
+        android:layout_height="44dp"
+        android:text="Desbloquear SAT"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        android:background="@drawable/blue_bt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.38" />
+
+    <EditText
+        android:id="@+id/editTextCodAtiva"
+        android:layout_width="186dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="00000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.022"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.036" />
+
+    <EditText
+        android:id="@+id/editTextCNPJ"
+        android:layout_width="185dp"
+        android:layout_height="43dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="03654119000176"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.022"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.099" />
+
+    <EditText
+        android:id="@+id/editTextCNPJSWHouse"
+        android:layout_width="199dp"
+        android:layout_height="46dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="16716114000172"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.964"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.102" />
+
+    <EditText
+        android:id="@+id/editTextNovoCodAtiva"
+        android:layout_width="201dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Novo Cod de Ativação"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.966"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.036" />
+
+    <EditText
+        android:id="@+id/editTextChaveCancelaVenda"
+        android:layout_width="201dp"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Chave Cancela venda"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.042"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/libversion"
+        app:layout_constraintVertical_bias="0.469" />
+
+    <EditText
+        android:id="@+id/editTextNumSessao"
+        android:layout_width="201dp"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Num Sessão"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.99"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/libversion"
+        app:layout_constraintVertical_bias="0.47" />
+
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.072"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.802" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UF:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.036"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.804">
+    </TextView>
+
+    <!-- ScrollView para o TextView de log -->
+    <ScrollView
+        android:layout_width="807dp"
+        android:layout_height="91dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:id="@+id/incomingMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:text="LOG"
+            android:textSize="24sp" />
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

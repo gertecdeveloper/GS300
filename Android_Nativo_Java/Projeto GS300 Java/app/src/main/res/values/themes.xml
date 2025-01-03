@@ -1,74 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.GS300_PDV_JAVA" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.ExemploGS300_Java" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:statusBarColor">@color/AzGertec</item>
-        <item name="android:navigationBarColor">@color/AzGertec</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:alertDialogTheme">@style/MyAlertDialogTheme</item>
-        <item name="android:alertDialogStyle">@style/MyAlertDialogStyle</item>
-
-    </style>
-    <style name="MyBorderlessButton">
-        <!-- Set background drawable and text size of the buttons here -->
-        <item name="android:background">@drawable/shadow</item>
-        <item name="android:textSize">10sp</item>
-        <item name="android:textColor">@color/black</item>
-        <item name="android:maxWidth">10dp</item>
     </style>
 
-    <style name="MyButtonBar">
-        <!-- Define a background for the button bar and a divider between the buttons here -->
-        <item name="android:background">@color/AzGertec</item>
-        <item name="android:textColor">@color/white</item>
-    </style>
-    <style name="MyAlertDialogTitle">
-        <item name="android:maxLines">1</item>
-        <item name="android:scrollHorizontally">true</item>
-        <item name="android:textColor">@color/white</item>
-    </style>
-
-    <style name="MyAlertTextAppearance">
-        <!-- Set text size and color of title and message here -->
-        <item name="android:textSize">20sp</item>
-        <item name="android:textColor">@color/white</item>
-    </style>
-
-    <style name="MyAlertDialogTheme">
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowTitleStyle">@style/MyAlertDialogTitle</item>
-        <item name="android:windowContentOverlay">@null</item>
-        <item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
-        <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
-        <item name="android:windowIsFloating">true</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textAppearanceMedium">@style/MyAlertTextAppearance</item>
-        <!-- If you don't want your own button bar style use
-                @android:style/Holo.Light.ButtonBar.AlertDialog
-                and
-                ?android:attr/borderlessButtonStyle
-             instead of @style/MyButtonBar and @style/MyBorderlessButton -->
-        <item name="android:buttonBarStyle">@style/MyButtonBar</item>
-        <item name="android:buttonBarButtonStyle">@style/MyBorderlessButton</item>
-    </style>
-
-    <style name="MyAlertDialogStyle">
-        <!-- Define background colors of title, message, buttons, etc. here -->
-        <item name="android:fullDark">@color/AzGertec</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:topDark">@color/AzGertec</item>
-        <item name="android:centerDark">@color/AzGertec</item>
-        <item name="android:bottomDark">@color/AzGertec</item>
-        <item name="android:fullBright">@color/AzGertec</item>
-        <item name="android:topBright">@color/AzGertec</item>
-        <item name="android:centerBright">@color/AzGertec</item>
-        <item name="android:bottomBright">@color/AzGertec</item>
-        <item name="android:bottomMedium">@color/AzGertec</item>
-        <item name="android:centerMedium">@color/AzGertec</item>
-    </style>
-    <style name="Theme.GS300_PDV_JAVA" parent="Base.Theme.GS300_PDV_JAVA" />
+    <style name="Theme.ExemploGS300_Java" parent="Base.Theme.ExemploGS300_Java" />
 </resources>
